@@ -1,3 +1,6 @@
+<p align="center" > <img src="https://2.bp.blogspot.com/-duP2WIppnvM/Vcr5MXUgVaI/AAAAAAAADnY/KhrgLmqRCE0/s1600/hotel-management-online.gif" width="400"></p>
+<h1 align="center"> Shereen Chalet, Kalpitiya</h1>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
