@@ -18,26 +18,26 @@
 1. **Create a new folder, go inside the folder and open git bash from it** 
 2. **Clone the project** 
  ```
- git clone https://github.com/TharinduAB/Hotel-Management-System-for-the-Shereen-Chalet.git
+    git clone https://github.com/TharinduAB/Hotel-Management-System-for-the-Shereen-Chalet.git
  ```
 3. **Install composer packages** 
 ```
-composer install
+    composer install
 ```
 4. **Open the cloned project from VS code IDE**
 5. **Change the database name in the .env.example with the relevant DB name and Rename the .env.example as .env**
 6. **Make sure to create a new Database inside MySQL DBMS with the DB name given in the .env file**
 7. **Generate keys** 
 ```
-php artisan key:generate
+    php artisan key:generate
 ```
 8. **Do the table migrations** 
 ```
-php artisan migrate
+    php artisan migrate
 ```
 9. **Run the server** 
 ```
-php artisan serve
+    php artisan serve
 ```
 10. **Run the application by using the suggested URL in a prefered web browser**
 
