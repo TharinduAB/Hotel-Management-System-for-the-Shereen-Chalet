@@ -3,7 +3,7 @@
 
 ## To run the application
 
-### --prerequisities--
+### --Prerequisities--
 
   Following servers and packages should be installed prior to the the application installation
 
@@ -11,7 +11,7 @@
 - **latest version of composer**
 - **mySQL server**
 
-### --installation--
+### --Installation--
   
   Following commands can be followed to run the application successfully
 
@@ -26,8 +26,8 @@
     composer install
 ```
 5. **Open the cloned project from VS code IDE**
-6. **Change the database name in the .env.example with the relevant DB name and Rename the .env.example as .env**
-7. **Make sure to create a new Database inside MySQL DBMS with the DB name given in the .env file**
+6. **Change the database name in the .env.example with the relevant DB name and Rename the .env.example file as .env**
+7. **Create a new Database inside MySQL DBMS with the DB name given in the .env file**
 8. **Generate keys** 
 ```
     php artisan key:generate
