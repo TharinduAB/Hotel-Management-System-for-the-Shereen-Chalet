@@ -16,6 +16,9 @@ class HotelRoomController extends Controller
      */
             public function index()
             {
+
+                $search = request()->query('search');//user input word inside the search bar will be assigned to this variable
+
                 //show the list of all the hotel rooms when the page loads
                 //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
                 $rooms = HotelRoom::latest()->simplePaginate(4);
