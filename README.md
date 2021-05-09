@@ -1,4 +1,4 @@
-<p align="center" > <img src="https://2.bp.blogspot.com/-duP2WIppnvM/Vcr5MXUgVaI/AAAAAAAADnY/KhrgLmqRCE0/s1600/hotel-management-online.gif" width="400"></p>
+<p align="center" > <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/e9/b4/78/nuovo-logo.jpg" width="400"></p>
 <h1 align="center"> Shereen Chalet, Kalpitiya</h1>
 
 ## To run the application
