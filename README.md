@@ -1,6 +1,10 @@
 <p align="center" > <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/e9/b4/78/nuovo-logo.jpg" width="400"></p>
 <h1 align="center"> Shereen Chalet, Kalpitiya</h1>
 
+<h4 align="center"> Online Hotel management web application</h4>
+<p align="center">The users of this web application will be the Administration panel of the Hotel system</p>
+<hr/>
+
 ## To run the application
 
 ### --Prerequisities--
