@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\dine_in;
+use PDF;
 
 class DineInController extends Controller
 {
@@ -132,5 +133,15 @@ class DineInController extends Controller
         $dineIn->delete();
 
         return redirect('/dinein')->with('completed', 'Meal has been deleted');
+    }
+    //Report Generating
+    public function dineInReport(){
+        $data = dine_in::all();
+
+        view()->share('dineinlist',$data);
+        $pdf = PDF::loadView('pdfs.dineinReport',$data);
+        $pdf->setPaper('A4','landscape');
+
+        return $pdf->download('dinein-list.pdf');
     }
 }
