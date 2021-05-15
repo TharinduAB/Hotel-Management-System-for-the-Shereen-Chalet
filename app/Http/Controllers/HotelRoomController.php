@@ -38,6 +38,11 @@ class HotelRoomController extends Controller
                                             ->paginate(10);
                     return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
                 }
+                elseif($availableRooms){
+                    //if user has clicked the 'show available rooms only' button, then available rooms will be filtered and displayed from this
+                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(10);
+                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                }
  
             }
 
