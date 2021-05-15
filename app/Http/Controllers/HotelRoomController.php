@@ -18,7 +18,7 @@ class HotelRoomController extends Controller
             {
 
                 $search = request()->query('search');//user input word inside the search bar will be assigned to this variable
-                //show available rooms only function should also needs to be implemented here
+                $avaialbleRooms = request()->query('searchAvailable'); //name of the showAvailableRooms input btn is 'searchAvailable'
 
                 //show the list of all the hotel rooms when the page loads
                 //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
