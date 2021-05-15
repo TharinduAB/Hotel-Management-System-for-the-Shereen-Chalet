@@ -50,6 +50,18 @@ class HotelRoomController extends Controller
  
             }
 
+            public function availableRoomsPDF(){
+                //retrieve all records from db
+                $rooms = HotelRoom::where('roomStatus','like', "%available%")->paginate(100);
+
+                //share data to view
+                view()->share('rooms', $rooms);
+                $pdf = PDF::loadView('Rooms.report', $rooms); //Rooms.index means the index.blade file in the Rooms folder
+
+                //download PDF file with download method
+                return $pdf->download('RoomsPDF.pdf');
+           }
+
     /**
      * --------------------------------------------------------------------------------------------
      * Show the form for creating a new resource.
