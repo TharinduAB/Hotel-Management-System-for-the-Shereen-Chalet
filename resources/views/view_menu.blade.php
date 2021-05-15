@@ -89,6 +89,9 @@
             </tbody>
           </table>
           <hr class = "line2">
+          <div>
+            <a href="../dineInReport" class="btn btn-success btn-sm">Download Report</a>
+          </div>
       </div>
 
     </body>

@@ -112,7 +112,7 @@ Route::get('bookPdf',[indexController::class,'exportBookPDF']);
 
 //-----------------------------------------------------routes of Dining management section are below
 Route::resource('dinein', 'App\Http\Controllers\DineInController');
-
+Route::get('/dineInReport',[DineInController::class,'dineInReport']);
 //-----------------------------------------------------routes of Inventory management section are below
 Route::get('InvHome', function () {
     return view('InvHome');
