@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\HotelRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use PDF; //this attribute is used to take the DomPDF in service to convert HTML to PDF File in Laravel
 
 class HotelRoomController extends Controller
 {
@@ -59,7 +60,7 @@ class HotelRoomController extends Controller
                 $pdf = PDF::loadView('Rooms.report', $rooms); //Rooms.index means the index.blade file in the Rooms folder
 
                 //download PDF file with download method
-                return $pdf->download('RoomsPDF.pdf');
+                return $pdf->download('AvailableRooms.pdf');
            }
 
     /**
