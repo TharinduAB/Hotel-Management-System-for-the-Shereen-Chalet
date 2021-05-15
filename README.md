@@ -46,6 +46,41 @@
     ```
 11. Run the application by using the suggested URL in a prefered web browser
 
+## Contributing
+* cmd to create a new feature branch                                    
+        ``git checkout -b newFeatureBranchName``                                
+* cmd to checkout to a branch which is already created                              
+        ``git checkout featureBranchName``                              
+        
+When working in your branch,                                                
+* if any new file created:                                              
+        ``git add newFileName``                         
+* if multiple files created, add them all at once:                                      
+        ``git add . ``                                                  
+        
+After doing any modification to the code in your branch,                                                  
+* commit it:                                        
+        ``git commit -m 'commitName'``                                  
+* push it to the featureBranch in github                                        
+        ``git push origin featureBranchName``                                   
+        
+When your featureBranch is ready to merged with the Master branch,                              
+* pull the latest updates in github master to local master                              
+        ``git checkout master``                                     
+        ``git pull``                                            
+* make sure to pull the updates in master to your featureBranch also                                
+        ``git checkout featureBranchName``                                  
+        ``git pull origin master``                                      
+* If the pulling(merge) was successful, push the changes to github featureBranch:                               
+        ``git push origin featureBranchName``                               
+        
+* Now this featureBranch can be merged to master                                                                                         
+        ``git checkout master``                                             
+        ``git merge featureBranchName``                                             
+* If everything works(run) perfect, push the updates in local master to github master:                                      
+        ``git push``                        
+        
+
 ## Acknowledgment
 
 ## Contributors
