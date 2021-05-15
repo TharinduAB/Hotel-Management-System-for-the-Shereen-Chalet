@@ -24,8 +24,8 @@
     ```
     git clone https://github.com/TharinduAB/Hotel-Management-System-for-the-Shereen-Chalet.git
     ```
-3. Go inside the cloned project folder using CD command**
-4. Install composer packages** 
+3. Go inside the cloned project folder using CD command
+4. Install composer packages
     ```
     composer install
     ```
