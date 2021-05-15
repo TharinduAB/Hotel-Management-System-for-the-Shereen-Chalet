@@ -18,14 +18,7 @@ class HotelRoomController extends Controller
             {
 
                 $search = request()->query('search');//user input word inside the search bar will be assigned to this variable
-                $avaialbleRooms = request()->query('searchAvailable'); //name of the showAvailableRooms input btn is 'searchAvailable'
-
-                //show the list of all the hotel rooms when the page loads
-                //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
-                $rooms = HotelRoom::latest()->simplePaginate(5);
-                //without just returning raw data of all the rooms, return a view with room data
-                return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
-                //return view('Rooms.index', ['rooms' => $rooms]);
+                $availableRooms = request()->query('searchAvailable'); //name of the showAvailableRooms input btn is 'searchAvailable'
 
                 if($search){
                     //if user has searched anything, then filter the data as follows
@@ -42,6 +35,17 @@ class HotelRoomController extends Controller
                     //if user has clicked the 'show available rooms only' button, then available rooms will be filtered and displayed from this
                     $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(10);
                     return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                }
+                //if any of the search btn or showAvailable rooms btn clicked, the list of all the rooms in the table should be displayed as usual
+                else{
+
+                    //show the list of all the hotel rooms when the page loads
+                    //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
+                    $rooms = HotelRoom::latest()->simplePaginate(5);
+
+                    //without just returning raw data of all the rooms, return a view with room data
+                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                    //return view('Rooms.index', ['rooms' => $rooms]);
                 }
  
             }
