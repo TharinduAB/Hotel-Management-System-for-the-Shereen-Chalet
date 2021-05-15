@@ -26,6 +26,18 @@ class HotelRoomController extends Controller
                 //without just returning raw data of all the rooms, return a view with room data
                 return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
                 //return view('Rooms.index', ['rooms' => $rooms]);
+
+                if($search){
+                    //if user has searched anything, then filter the data as follows
+                    //$rooms = HotelRoom::where('roomStatus', 'like', "%{$search}%")->paginate(10);//this will check the roomStatus column only
+                    $rooms = HotelRoom::where('roomStatus','like',"%{$search}%")
+                                            ->orWhere('roomType','like',"%{$search}%")
+                                            ->orWhere('roomNo','like',"%{$search}%")
+                                            ->orWhere('description','like',"%{$search}%")
+                                            ->orWhere('floorNo','like',"%{$search}%")
+                                            ->paginate(10);
+                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                }
  
             }
 
