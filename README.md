@@ -47,8 +47,9 @@
 11. Run the application by using the suggested URL in a prefered web browser
 
 ## Contributing
-* cmd to create a new feature branch                                    
-        ``git checkout -b newFeatureBranchName``                                
+* cmd to create a new feature branch in the repo                                   
+        ``git checkout -b newFeatureBranchName``                            
+        ``git push origin newFeatureBranchName`` (now check whether it's created in github)
 * cmd to checkout to a branch which is already created                              
         ``git checkout featureBranchName``                              
         
