@@ -22,7 +22,7 @@ class HotelRoomController extends Controller
 
                 //show the list of all the hotel rooms when the page loads
                 //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
-                $rooms = HotelRoom::latest()->simplePaginate(4);
+                $rooms = HotelRoom::latest()->simplePaginate(5);
                 //without just returning raw data of all the rooms, return a view with room data
                 return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
                 //return view('Rooms.index', ['rooms' => $rooms]);
