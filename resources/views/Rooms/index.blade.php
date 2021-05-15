@@ -89,7 +89,8 @@
         
                         {{ $rooms->appends(['search' => request()-> query('search')])->links() }}
                         <!--appends method is also attached with the pagination to make sure that, every pagination will work according to the search query-->
-                        <br><br>                
+                        <br>
+                        
                 </div>
             </div>
     </div>

@@ -33,8 +33,8 @@ class HotelRoomController extends Controller
                 }
                 elseif($availableRooms){
                     //if user has clicked the 'show available rooms only' button, then available rooms will be filtered and displayed from this
-                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(10);
-                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(4);
+                    return view('Rooms.AvailableRooms', compact('rooms')) -> with(request()->input('page'));
                 }
                 //if any of the search btn or showAvailable rooms btn clicked, the list of all the rooms in the table should be displayed as usual
                 else{

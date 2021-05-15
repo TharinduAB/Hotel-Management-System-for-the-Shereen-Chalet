@@ -42,6 +42,9 @@ Route::get('/RM', function(){
 //route to show all the rooms as a list
 Route::get('/RM/roomList', [\App\Http\Controllers\HotelRoomController::class, 'index']);
 
+//**route to pdf */
+Route::get('/RM/roomList/list/pdf', [\App\Http\Controllers\HotelRoomController::class, 'availableRoomsPDF']);
+
 //route to show the details of a 1 room using a wildcard to replace everything comes after room/ with it
 //then that wildcard value will get stored in variable called $hotelRoom
 Route::get('/RM/roomList/{hotelRoom}', [\App\Http\Controllers\HotelRoomController::class, 'show']);
