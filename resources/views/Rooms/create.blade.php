@@ -95,7 +95,7 @@
                                     <div class="control-group col-6 mt-3">
                                         <label for="roomStatus" style="color: white">Room Status </label>
                                         <select  class="form-control" name="roomStatus" id="roomStatus">
-                                            <option value="available">Available</option>
+                                            <option value="Available">Available</option>
                                             <option value="underRenovation">under Renovation</option>
                                         </select>
                                         <text style="color: white">(if the room is under renovation- set the status as 'Unavailable')</text>
