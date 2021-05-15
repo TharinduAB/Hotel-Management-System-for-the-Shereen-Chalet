@@ -43,7 +43,7 @@
                             </div>
                         </form>
                         <div class=" col-lg-8">
-                            <button class="btn btn-danger btn-lg font-weight-bold ml-2 float-right  mt-3 ">Report</button>
+                            <a class="btn btn-danger btn-lg font-weight-bold ml-2 float-right  mt-3 " href="{{route('hotel_rooms.index', ['download'=>'pdf'])}}">Report</a>
                             <a class="btn btn-outline-info btn-lg font-weight-bold float-right  mt-3" href="/RM/roomList/create/room"> Add new Room +</a>
                             
                         </div>

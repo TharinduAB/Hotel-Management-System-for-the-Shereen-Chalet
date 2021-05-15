@@ -15,7 +15,7 @@ class HotelRoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-            public function index()
+            public function index(Request $request)
             {
 
                 $search = request()->query('search');//user input word inside the search bar will be assigned to this variable
