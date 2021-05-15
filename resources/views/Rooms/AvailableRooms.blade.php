@@ -29,7 +29,7 @@
                 <div>
                     <div class="row ">
 
-                        <a href="/RM/roomList" class=" float-right btn btn-dark btn-sm ml-3  mt-3" style="height: 34px;">Go back</a><br>
+                        <a href="/RM/roomList" class=" float-right btn btn-outline-dark btn-sm ml-3  mt-3" style="height: 34px; padding:5px,5px;">Go back</a><br>
                         <form action="/RM/roomList" method="GET" class="float-left">
                             <div class="form-group">
                                 
@@ -53,7 +53,7 @@
                                     
                     <h2 class="float-left">Available Room List</h2>
                     <!--report generating button to get a pdf of available rooms only-->
-                    <a class="btn ml-2 float-right btn-danger mt-3 mb-2" href="{{ URL::to('/RM/roomList/list/pdf') }}">Export details of Available Rooms</a>
+                    <a class="btn ml-2 float-right btn-danger mt-3 mb-3" href="{{ URL::to('/RM/roomList/list/pdf') }}">Export details of Available Rooms</a>
         
                     <table class="table table-bordered  table-striped mt-3 ">
                         <tr style="background-color: #9fe3de; color: #404040" >

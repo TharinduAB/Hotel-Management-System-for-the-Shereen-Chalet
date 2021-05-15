@@ -44,6 +44,7 @@ Route::get('/RM/roomList', [\App\Http\Controllers\HotelRoomController::class, 'i
 
 //**route to pdf */
 Route::get('/RM/roomList/list/pdf', [\App\Http\Controllers\HotelRoomController::class, 'availableRoomsPDF']);
+Route::resource('hotel_rooms', 'App\Http\Controllers\HotelRoomController'); //this was created for Report in index.blade
 
 //route to show the details of a 1 room using a wildcard to replace everything comes after room/ with it
 //then that wildcard value will get stored in variable called $hotelRoom

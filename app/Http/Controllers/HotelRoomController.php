@@ -34,7 +34,7 @@ class HotelRoomController extends Controller
                 }
                 elseif($availableRooms){
                     //if user has clicked the 'show available rooms only' button, then available rooms will be filtered and displayed from this
-                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(4);
+                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(10);
                     return view('Rooms.AvailableRooms', compact('rooms')) -> with(request()->input('page'));
                 }
                 //if any of the search btn or showAvailable rooms btn clicked, the list of all the rooms in the table should be displayed as usual
@@ -43,6 +43,14 @@ class HotelRoomController extends Controller
                     //show the list of all the hotel rooms when the page loads
                     //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
                     $rooms = HotelRoom::latest()->simplePaginate(5);
+                                       
+                    //pdf report of all the rooms in the DB
+                    if($request->has('download'))
+                    {
+                        $rooms = HotelRoom::latest()->simplePaginate(100);//since the report should contain all the rooms
+                        $pdf = PDF::loadView('Rooms.report', compact('rooms')); //retrieve the data in db table
+                        return $pdf->download('RoomsPDF.pdf');//use download method to download the pdf
+                    }
 
                     //without just returning raw data of all the rooms, return a view with room data
                     return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
