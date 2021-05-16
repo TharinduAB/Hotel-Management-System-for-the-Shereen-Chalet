@@ -4,7 +4,6 @@
         <link href="/css/index.css" rel="stylesheet">
         <title>Inventory Management New Entry</title>
         <link href    = "/css/main.css" rel="stylesheet">
-        <link href    = "/css/invCreate.css" rel="stylesheet">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
     </head>
     <body>
