@@ -79,9 +79,13 @@ Route::resource('events',EventController::class);
 Route::view('create','user.create');
 Route::post('create',[createfunc::class,'getData']);
 Route::get('index',[indexController::class,'viewlist']);
-Route::get('delete/{id}',[indexController::class,'delete']);
-Route::get('edit/{id}',[indexController::class,'showData']);
-Route::post('edit',[indexController::class,'update']);
+Route::get('deletelist/{id}',[indexController::class,'delete']);
+
+Route::view("edit",'user.edit');
+Route::get('editlist/{id}',[indexController::class,'showData']);
+Route::post('editlist',[indexController::class,'update']);
+
+Route::get('bookPdf',[indexController::class,'exportBookPDF']);
 
 //-----------------------------------------------------routes of Dining management section are below
 Route::resource('dinein', 'App\Http\Controllers\DineInController');
@@ -111,4 +115,6 @@ Route::view("InvUpdate",'InvUpdate');
 Route::get('InvUpdate',[UpdateController::class,'view']);
 Route::get('edit/{id}',[UpdateController::class,'editData']);
 Route::post('edit',[UpdateController::class,'update']);
+
+
 

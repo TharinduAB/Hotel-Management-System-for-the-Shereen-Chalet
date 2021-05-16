@@ -41,10 +41,10 @@
 <div>
     <h2>Update booking details</h2><br>
 
-    <form action="/edit" method="POST">
+    <form action="/editlist" method="POST">
       @csrf
     <input type="hidden" name="id" value="{{$data->id}}">
-
+  <div class="box">
   
 
   <div class="form-group">
@@ -94,9 +94,9 @@
     <input type="date" name="checked_out" value="{{$data->checked_out}}" class="form-control" id="exampleInputCOdate" placeholder="">
   </div>
   <br><br>
-  
+</div>  
   <div class="btn1">
-  <button type="submit" class="btn btn-primary">Update</button>
+  <button type="submit" class=" btn-primary">Update</button>
 </div>
 </form>
     </div>

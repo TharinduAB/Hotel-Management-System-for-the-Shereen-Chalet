@@ -23,7 +23,7 @@ class createfunc extends Controller
         $customer ->checked_out=$req->checked_out;
         
         $customer->save();
-        return redirect('create');
+        return redirect('index');
         
     }
 }
