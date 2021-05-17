@@ -1,4 +1,4 @@
-<p align="center" > <img src="https://image.freepik.com/free-vector/hostel-employee-chef-maid-bell-boy-education_335657-3154.jpg" width="400"></p>
+<p align="center" > <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/e9/b4/78/nuovo-logo.jpg" width="400"></p>
 <h1 align="center"> Shereen Chalet, Kalpitiya</h1>
 
 <h4 align="center"> Online Hotel management web application</h4>
