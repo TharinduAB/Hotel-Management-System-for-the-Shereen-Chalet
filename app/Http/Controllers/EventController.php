@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use PDF;
+
 
 class EventController extends Controller
 {
@@ -18,6 +20,35 @@ class EventController extends Controller
 
         return view('events.index',compact('events'))->with(request()->input('page'));
     }
+
+    public function exportEventPDF(){
+        $events = Event::latest()->paginate(15);
+        $pdf=PDF::loadview('events.indexpdf',compact('events'));
+        return $pdf->download('Event-list.pdf');
+    }
+
+
+
+    public function eventSearch(){
+
+        $search_text = $_GET['query'];
+        $events = Event::where('fname','Like', '%'.$search_text.'%')->orWhere('lname','Like', '%'.$search_text.'%')
+        ->orWhere('eventType','Like', '%'.$search_text.'%')->orWhere('nic','Like', '%'.$search_text.'%')
+         ->orWhere('title','Like', '%'.$search_text.'%')->orWhere('contact','Like', '%'.$search_text.'%')
+         ->orWhere('hallNumber','Like', '%'.$search_text.'%')->orWhere('no','Like', '%'.$search_text.'%')
+         ->orWhere('street','Like', '%'.$search_text.'%')->orWhere('city','Like', '%'.$search_text.'%')
+         ->orWhere('email','Like', '%'.$search_text.'%')->orWhere('charges','Like', '%'.$search_text.'%')
+         ->orWhere('eventday','Like', '%'.$search_text.'%')->orWhere('time','Like', '%'.$search_text.'%')
+         ->orWhere('participantNo','Like', '%'.$search_text.'%')->paginate(50);
+
+        return view('events.searchEvent',compact('events'));
+    }
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

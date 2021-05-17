@@ -1,7 +1,7 @@
 @extends('events.layout')
 
 @section('content')
-<link rel="stylesheet" href="/css/readAllEvents.css"/> 
+<link rel="stylesheet" href="/css/searchEvent.css"/> 
 <div class="bckimage">
 
 <header>
@@ -41,23 +41,19 @@
 
 
 
-
 <div class="row">
     <div class="col-lg-12">
         <div class="pull left">
-             <br>  <center> <h2><u>Event Reservations</u></h2></center>
+             <br>  <center> <h1><u>Search Results</u></h1></center>
         </div>
-        <center>
-            <form class="searchEvent" type="get" action="{{ url('/eventSearch') }}">
-            <input type="search" name="query" placeholder="Search..">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            </form></center>
+        
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('events.create') }}">Create New Event</a>
+            <a class="btn btn-bk" href="{{ route('events.index') }}"> Back</a>
         </div>
+        <br>
     </div>
 </div>
-<br><br><br><br>
+<br><br>
 
 
 @if($message = Session::get('success'))
@@ -120,12 +116,10 @@
     @endforeach
 
 </table>
-<div class="pull-right">
-    <a class="btn btn-pdf" href="/eventPDF">Generate Report</a>
-</div>
+
 {{ $events->links() }}
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 
 
 

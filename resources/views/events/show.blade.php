@@ -18,7 +18,7 @@
 
 <div class            = "topnav">
 <a href             = "#RoomBooking">Room Booking</a>
-<a href             = "eventHome">Event Management</a>
+<a href             = "../eventHome">Event Management</a>
 <a href             = "#Emp">Employee Management</a>
 <a href             = "../RM">Room Management</a>
 <a href             = "#Maint">Maintenance</a>
@@ -30,8 +30,8 @@
 
 <hr class             = "line2"><br>
 
-<a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a><text> > </text>
-<a href               = "eventHome" style="font-family:calibri;font-size:18px;"> Event Management </a><text> > </text>
+<a href               = "../SCHome" style="font-family:calibri;font-size:18px;"> Home  </a><text> > </text>
+<a href               = "../eventHome" style="font-family:calibri;font-size:18px;"> Event Management </a><text> > </text>
 <a href               = "{{ route('events.index') }}" style="font-family:calibri;font-size:18px;"> View All Events </a> </a><text> > </text>
 <a href               = "{{ route('events.show',$event->id) }}" style="font-family:calibri;font-size:18px;"> Show Event </a>
 <a href               = "#useraccount" target="_blank">
