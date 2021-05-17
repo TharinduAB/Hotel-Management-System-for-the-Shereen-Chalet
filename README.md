@@ -68,14 +68,8 @@ After doing any modification to the code in your branch,
 When your featureBranch is ready to merged with the Master branch,                              
 * pull the latest updates in github master to local master                              
         ``git checkout master``                                     
-        ``git pull``                                            
-* make sure to pull the updates in master to your featureBranch also                                
-        ``git checkout featureBranchName``                                  
-        ``git pull origin master``                                      
-* If the pulling(merge) was successful, push the changes to github featureBranch:                               
-        ``git push origin featureBranchName``                               
-        
-* Now this featureBranch can be merged to master                                                                                         
+        ``git pull``                                                                                
+* Now your featureBranch can be merged to local master                                                                                         
         ``git checkout master``                                             
         ``git merge featureBranchName``                                             
 * If everything works(run) perfect, push the updates in local master to github master:                                      
