@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\HotelRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use PDF; //this attribute is used to take the DomPDF in service to convert HTML to PDF File in Laravel
 
 class HotelRoomController extends Controller
 {
@@ -14,16 +15,61 @@ class HotelRoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-            public function index()
+            public function index(Request $request)
             {
-                //show the list of all the hotel rooms when the page loads
-                //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
-                $rooms = HotelRoom::latest()->simplePaginate(4);
-                //without just returning raw data of all the rooms, return a view with room data
-                return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
-                //return view('Rooms.index', ['rooms' => $rooms]);
+
+                $search = request()->query('search');//user input word inside the search bar will be assigned to this variable
+                $availableRooms = request()->query('searchAvailable'); //name of the showAvailableRooms input btn is 'searchAvailable'
+
+                if($search){
+                    //if user has searched anything, then filter the data as follows
+                    //$rooms = HotelRoom::where('roomStatus', 'like', "%{$search}%")->paginate(10);//this will check the roomStatus column only
+                    $rooms = HotelRoom::where('roomStatus','like',"%{$search}%")
+                                            ->orWhere('roomType','like',"%{$search}%")
+                                            ->orWhere('roomNo','like',"%{$search}%")
+                                            ->orWhere('description','like',"%{$search}%")
+                                            ->orWhere('floorNo','like',"%{$search}%")
+                                            ->paginate(10);
+                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                }
+                elseif($availableRooms){
+                    //if user has clicked the 'show available rooms only' button, then available rooms will be filtered and displayed from this
+                    $rooms = HotelRoom::where('roomStatus','like', "%{$availableRooms}%")->paginate(10);
+                    return view('Rooms.AvailableRooms', compact('rooms')) -> with(request()->input('page'));
+                }
+                //if any of the search btn or showAvailable rooms btn clicked, the list of all the rooms in the table should be displayed as usual
+                else{
+
+                    //show the list of all the hotel rooms when the page loads
+                    //$rooms = HotelRoom::all(); //fetch all hotel rooms  from DB
+                    $rooms = HotelRoom::latest()->simplePaginate(5);
+                                       
+                    //pdf report of all the rooms in the DB
+                    if($request->has('download'))
+                    {
+                        $rooms = HotelRoom::latest()->simplePaginate(100);//since the report should contain all the rooms
+                        $pdf = PDF::loadView('Rooms.report', compact('rooms')); //retrieve the data in db table
+                        return $pdf->download('RoomsPDF.pdf');//use download method to download the pdf
+                    }
+
+                    //without just returning raw data of all the rooms, return a view with room data
+                    return view('Rooms.index', compact('rooms')) -> with(request()->input('page'));
+                    //return view('Rooms.index', ['rooms' => $rooms]);
+                }
  
             }
+
+            public function availableRoomsPDF(){
+                //retrieve all records from db
+                $rooms = HotelRoom::where('roomStatus','like', "%available%")->paginate(100);
+
+                //share data to view
+                view()->share('rooms', $rooms);
+                $pdf = PDF::loadView('Rooms.report', $rooms); //Rooms.index means the index.blade file in the Rooms folder
+
+                //download PDF file with download method
+                return $pdf->download('AvailableRooms.pdf');
+           }
 
     /**
      * --------------------------------------------------------------------------------------------
