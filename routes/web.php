@@ -61,6 +61,8 @@ Route::delete ('/RM/roomList/{hotelRoom}', [\App\Http\Controllers\HotelRoomContr
 
 //------------------------------------------------------routes of Employee section are below-------------------------------------------------
 Route::resource('employees',EmployeeController::class);
+//route for report generation function
+Route::get('/createpdf',[\App\Http\Controllers\EmployeeController::class,'createPDF']);
 
 //-----------------------------------------------------routes of Housekeeper section are below----------------------------------------------
 Route::resource('housekeepers', HousekeeperController::class);
