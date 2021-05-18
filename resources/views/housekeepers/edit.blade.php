@@ -15,7 +15,7 @@
 @section('content')
 <div style="background-image: url({{asset("hsImages/bc2.jpg")}});"><br><br>
   <div class="container" style="opacity:0.88; background-color:white;"><br>
-  
+
     @if ($errors->any())
         <div class="alert alert-danger">
           <strong> Whoops! There were some problems with your inputs.</strong><br><br>
@@ -29,7 +29,7 @@
 
     <div class="row">
       <div class = "col-lg-12">
-        <h3><u>Edit Housekeeper Details</u></h3>
+        <h3 style="margin-left:50px;"><u><b>Edit Housekeeper Details</b></u></h3>
         <div class="float-right">
           <div class="btn-group">
             <a class="btn btn-outline-primary" href = "{{ route('housekeepers.index') }}">List Of Housekeepers</a>

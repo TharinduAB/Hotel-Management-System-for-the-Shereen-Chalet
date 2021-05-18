@@ -24,7 +24,7 @@
 
     <div class="row">
       <div class = "col-lg-12">
-        <h3><u>List of Tasks</u></h3>
+        <h3 style="margin-left:50px;"><u><b>List of Tasks</b></u></h3>
         <div class="float-right">
           <div class="btn-group">
             <a class="btn btn-outline-primary" href = "{{ route('housekeepers.index') }}">List of Housekeepers</a>
