@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use PDF;
 
 class EmployeeController extends Controller
 {
@@ -124,4 +125,17 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')
                         ->with('success','Employee deleted successfully');
     }
+
+    // Generate PDF
+    public function createPDF() {
+        // retreive all records from db
+        $employees = Employee::latest()->paginate(3);
+  
+        // share data to view
+        view()->share('employees',$employees);
+        $pdf = PDF::loadView('employees.report',$employees);
+  
+        // download PDF file with download method
+        return $pdf->download('pdf_file.pdf');
+      }
 }
