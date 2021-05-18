@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <title>Maintenance Management</title>
         <link href    = "{{asset("css/main.css")}}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
@@ -29,10 +30,9 @@
 <div>
   @yield('content1')
 </div>
-  <div class="container">
-    <br>
-    @yield('content')
-  </div>
+<div>
+  @yield('content')
+</div>
 </body>
 
 </html>
