@@ -59,10 +59,10 @@
             <td>{{ $row->room_ID }}</td>
             <td>
                   <form action="{{ route('tasks.destroy', $row->task_id) }}" method = "POST">
-                      <a  class="btn btn-primary" href = "{{ route('tasks.edit',$row->task_id) }}">Edit</a>
+                      <a  class="btn btn-primary btn-sm" href = "{{ route('tasks.edit',$row->task_id) }}">Edit</a>
                       @csrf
                       @method('DELETE')
-                      <button  onclick="return confirm('Are You Sure You Want to delete this task? ');" class="btn btn-danger">Delete</button>
+                      <button  onclick="return confirm('Are You Sure You Want to delete this task? ');" class="btn btn-danger btn-sm">Delete</button>
                   </form>
             </td>
           </tr>

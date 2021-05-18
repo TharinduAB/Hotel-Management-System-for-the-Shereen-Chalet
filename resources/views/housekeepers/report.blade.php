@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <br><h3 style="margin-left:235px;"><u>Details of Housekeepers</u></h3><br>
+    <br><h3 style="margin-left:235px;"><u><b>Details of Housekeepers</b></u></h3>
     <h5 style="margin-left:235px;">Shereen Chalet, Kalpitiya</h5><br><br>
 
         <div style="margin-left:12px; margin-right:12px;">

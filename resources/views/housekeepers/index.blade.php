@@ -46,7 +46,7 @@
             <th>Hired Agency Name</th>
             <th>Gender</th>
             <th>Contact No</th>
-            <th width="215px">Action</th>
+            <th width="250px">Action</th>
           </tr>
           @foreach ($housekeepers as $housekeeper)
           <tr>
@@ -62,11 +62,11 @@
             <td>{{ $housekeeper->contact_Number }}</td>
             <td>
                   <form action="{{ route('housekeepers.destroy',$housekeeper->housekeeper_id) }}" method = "POST">
-                      <a  class="btn btn-primary" href = "{{ route('housekeepers.edit',$housekeeper->housekeeper_id) }}">Edit</a>
-                      <a  class="btn btn-info" href = "{{ route('housekeepers.show',$housekeeper->housekeeper_id) }}">Task</a>
+                      <a  class="btn btn-primary btn-sm" href = "{{ route('housekeepers.edit',$housekeeper->housekeeper_id) }}">Edit</a>
+                      <a  class="btn btn-info btn-sm" href = "{{ route('housekeepers.show',$housekeeper->housekeeper_id) }}">Task</a>
                       @csrf
                       @method('DELETE')
-                      <button onclick="return confirm('Are You Sure You Want to delete this housekeeper? ');" class="btn btn-danger">Delete</button>
+                      <button onclick="return confirm('Are You Sure You Want to delete this housekeeper? ');" class="btn btn-danger btn-sm">Delete</button>
                   </form>
             </td>
           </tr>
