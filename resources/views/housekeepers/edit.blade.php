@@ -47,31 +47,31 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputFName" class="font-weight-bold" >First Name</label>
-          <input type="text" class="form-control" name="first_Name" value = "{{ $housekeeper->first_Name}}" placeholder="Enter First Name">
+          <input type="text" class="form-control" name="first_Name" value = "{{ $housekeeper->first_Name}}" placeholder="Enter First Name" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputLName" class="font-weight-bold">Last Name</label>
-          <input type="text" class="form-control" name="last_Name" value = "{{ $housekeeper->last_Name}}" placeholder="Enter Last Name">
+          <input type="text" class="form-control" name="last_Name" value = "{{ $housekeeper->last_Name}}" placeholder="Enter Last Name" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputAddress" class="font-weight-bold">Hired Agency Name</label>
-        <input type="text" class="form-control" name="hired_Agency_Name" value = "{{ $housekeeper->hired_Agency_Name}}" placeholder="Enter Agency Name">
+        <input type="text" class="form-control" name="hired_Agency_Name" value = "{{ $housekeeper->hired_Agency_Name}}" placeholder="Enter Agency Name" required>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputNo" class="font-weight-bold">No</label>
-          <input type="text" class="form-control" name="house_Number" value = "{{ $housekeeper->house_Number}}" placeholder="Enter House No">
+          <input type="text" class="form-control" name="house_Number" value = "{{ $housekeeper->house_Number}}" placeholder="Enter House No" required>
         </div>
         <div class="form-group col-md-4">
           <label for="inputStreet" class="font-weight-bold">Street</label>
-          <input type="text" class="form-control" name="street" value = "{{ $housekeeper->street}}" placeholder="Enter Street Name">
+          <input type="text" class="form-control" name="street" value = "{{ $housekeeper->street}}" placeholder="Enter Street Name" required>
         </div>
         <div class="form-group col-md-4">
           <label for="inputCity" class="font-weight-bold">City</label>
-          <input type="text" class="form-control" name="city" value = "{{ $housekeeper->city}}" placeholder="Enter City Name">
+          <input type="text" class="form-control" name="city" value = "{{ $housekeeper->city}}" placeholder="Enter City Name" required>
         </div>
       </div>
 
@@ -81,7 +81,7 @@
             @if( $housekeeper->gender == 'Male')
         
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="Radios1" value="Male" checked>
+                <input class="form-check-input" type="radio" name="gender" id="Radios1" value="Male" checked >
                 <label class="form-check-label" for="exampleRadios1">Male</label>
             </div>
             <div class="form-check">
@@ -108,11 +108,11 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputNo" class="font-weight-bold">Contact Number</label>
-          <input type="text" class="form-control" name="contact_Number" value = "{{ $housekeeper->contact_Number}}" placeholder="Enter Contact Number">
+          <input type="tell" class="form-control" name="contact_Number" value = "{{ $housekeeper->contact_Number}}" placeholder="Enter Contact Number" pattern="[0-9]{10}" required>
         </div>
         <div class="form-group col-md-4">
           <label for="inputStreet" class="font-weight-bold">NIC Number</label>
-          <input type="text" class="form-control" name="nic_Number" value = "{{ $housekeeper->nic_Number}}" placeholder="Enter NIC Number">
+          <input type="text" class="form-control" name="nic_Number" value = "{{ $housekeeper->nic_Number}}" placeholder="Enter NIC Number" pattern="[0-9]{9}[V]" required>
         </div>
       </div><br>
       <button type="submit" class="btn btn-primary">Submit</button>
