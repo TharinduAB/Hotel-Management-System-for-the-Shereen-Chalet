@@ -23,7 +23,7 @@
     @endif
 
     <div class="row">
-      <div class = "col-lg-12">
+      <div class = "col-lg-12"><br>
         <h3 style="margin-left:50px;"><u><b>List of Tasks</b></u></h3>
         <div class="float-right">
           <div class="btn-group">
