@@ -65,13 +65,13 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputRoomNo" class="font-weight-bold" >Room Number</label>
-          <input type="text" class="form-control" name="room_ID" placeholder="Enter Room Number">
+          <input type="text" class="form-control" name="room_ID" placeholder="Enter Room Number" required>
         </div>
       </div>
 
       <div class="form-group">
           <label for="Textarea" class="font-weight-bold">Special Request/Description</label>
-          <textarea  class="form-control" name="description" rows="5"  placeholder="Enter specific task descrition"></textarea>
+          <textarea  class="form-control" name="description" rows="5"  placeholder="Enter specific task descrition" required></textarea>
       </div>
       
 
