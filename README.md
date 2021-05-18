@@ -103,5 +103,5 @@ productive and efficient if they upgrade their manual system to a web-based syst
    * IT19974910– Hapugala H.A.V.V-<a href="https://github.com/VenuraHapugala">VenuraHapugala</a>
    * IT19975764– Bandara M.B.D.N-<a href="https://github.com/dilendranishadhi">dilendranishadhi</a>
    * IT19987644– Ranodya M.J.C-<a href="https://github.com/CharmieRanodya">CharmieRanodya</a>
-   * IT19986036– Amarakoon A.V.G.H.S-<a href="https://github.com/HeliSahanya">TharinduAB</a>
+   * IT19986036– Amarakoon A.V.G.H.S-<a href="https://github.com/HeliSahanya">HeliSahanya</a>
    * IT19961422– Uyanahewa M.I.R-<a href="https://github.com/MadhaviImashi">MadhaviImashi</a>
