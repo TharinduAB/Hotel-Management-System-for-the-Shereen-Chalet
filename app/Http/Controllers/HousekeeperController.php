@@ -15,7 +15,7 @@ class HousekeeperController extends Controller
      */
     public function index()
     {
-        $housekeepers = Housekeeper::latest()->paginate(8);
+        $housekeepers = Housekeeper::latest()->paginate(5);
         return view('housekeepers.index', compact('housekeepers'))->with(request()->input('page'));
 
     }
