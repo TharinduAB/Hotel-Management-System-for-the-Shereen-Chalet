@@ -93,7 +93,7 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="inputNo" class="font-weight-bold">Contact Number</label>
-                  <input type="tell" class="form-control" name="contact_Number" placeholder="Enter Contact Number" pattern="[0-9]{10}" required>
+                  <input type="tel" class="form-control" name="contact_Number" placeholder="Enter Contact Number" pattern="[0-9]{10}" required>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputStreet" class="font-weight-bold">NIC Number</label>
