@@ -27,7 +27,7 @@
             <div class="btn-group" role="group" aria-label="Basic example">
               <a class="btn btn-outline-primary" href = "{{ route('housekeepers.create') }}">Add Housekeeper</a>
               <a class="btn btn-outline-primary" href = "{{ route('tasks.index') }}">List of Task</a>
-              <a class="btn btn-outline-primary">Report</a>
+              <a class="btn btn-outline-primary" href = "{{ URL::to('exportToPdf') }}">Report</a>
             </div>
           </div>
           </div>
