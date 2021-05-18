@@ -52,7 +52,7 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
                    <div class="form-group">
                        <strong>Birth Date:</strong>
-                       <input type="string" name="BirthDate" value="{{ $employee->BirthDate }}" class="form-control" placeholder="Year / Month / Date">
+                       <input type="date" name="BirthDate" value="{{ $employee->BirthDate }}" class="form-control" placeholder="Year / Month / Date">
                    </div>
              </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -64,13 +64,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Email:</strong>
-                    <input type="string" name="Email" value="{{ $employee->Email }}" class="form-control" placeholder="ex: employeename@example.com">
+                    <input type="email" name="Email" value="{{ $employee->Email }}" class="form-control" placeholder="ex: employeename@example.com">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Contact Number:</strong>
-                    <input type="string" name="ContactNo" value="{{ $employee->ContactNo }}" class="form-control" placeholder="xxx - xx xx xxx">
+                    <input type="tel" name="ContactNo" value="{{ $employee->ContactNo }}" class="form-control" placeholder="Ex: 0112345678" pattern="[0-9]{10}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -82,13 +82,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Salary:</strong>
-                    <input type="decimal" name="Salary" value="{{ $employee->Salary }}" class="form-control" placeholder="xxx xxx.xx">
+                    <input type="number" name="Salary" value="{{ $employee->Salary }}" class="form-control" placeholder="xxx xxx.xx">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Last Paid Date:</strong>
-                    <input type="string" name="LastPaidDate" value="{{ $employee->Salary }}" class="form-control" placeholder="Year / Month / Date">
+                    <input type="date" name="LastPaidDate" value="{{ $employee->Salary }}" class="form-control" placeholder="Year / Month / Date">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
