@@ -71,15 +71,13 @@ productive and efficient if they upgrade their manual system to a web-based syst
 * cmd to checkout to a branch which is already created                              
         ``git checkout featureBranchName``                              
         
-    ###### When working in your branch,                                                
-* if any new file created:                                              
-        ``git add newFileName``                         
+    ###### When working in your branch,                                                                       
 * if multiple files created, add them all at once:                                      
         ``git add . ``                                                  
         
     ###### After doing any modification to the code in your branch,                                                  
 * commit it:                                        
-        ``git commit -m 'commitName'``                                  
+        ``git commit -m "commitName"``                                  
 * push it to the featureBranch in github                                        
         ``git push origin featureBranchName``                                   
         
