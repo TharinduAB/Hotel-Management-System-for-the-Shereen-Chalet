@@ -36,7 +36,7 @@
     <br><br>
 
       <table class="table table-bordered">
-          <tr>
+          <tr class="table-primary">
             <th>Housekeeper ID</th>
             <th>First Name</th>
             <th>Contact Number</th>

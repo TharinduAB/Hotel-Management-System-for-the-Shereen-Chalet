@@ -35,7 +35,7 @@
       <br><br>
 
       <table class="table table-bordered">
-          <tr>
+          <tr class="table-info">
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
