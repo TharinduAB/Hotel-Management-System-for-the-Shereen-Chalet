@@ -22,6 +22,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('employees.create') }}"> Add New Employee</a>
+                <a class="btn btn-danger font-weight-bold ml-2 float-right  mt-3 " href="{{ URL::to('/createpdf') }}">Report</a>
             </div>
         </div>
     </div>
