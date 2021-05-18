@@ -62,9 +62,10 @@ Route::delete ('/RM/roomList/{hotelRoom}', [\App\Http\Controllers\HotelRoomContr
 //------------------------------------------------------routes of Employee section are below-------------------------------------------------
 Route::resource('employees',EmployeeController::class);
 
-//-----------------------------------------------------routes of Housekeeper section are below----------------------------------------------
+//-----------------------------------------------------routes of Maintenance section are below----------------------------------------------
 Route::resource('housekeepers', HousekeeperController::class);
 Route::resource('tasks', TaskController::class);
+Route::get('exportToPdf',[HousekeeperController::class,'exportHKDetailsPDF']);
 
 //------------------------------------------------------routes of Financial section are below-------------------------------------------------
 Route::get('/users', function () {
