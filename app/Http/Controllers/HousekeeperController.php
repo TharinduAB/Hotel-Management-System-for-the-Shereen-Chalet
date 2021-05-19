@@ -48,7 +48,7 @@ class HousekeeperController extends Controller
             'city'=>'required',
             'hired_Agency_Name'=>'required',
             'gender'=>'required',
-            'contact_Number'=>'required|digits:10'
+            'contact_Number'=>'required|unique:housekeepers'
         ]);
 
         //create a new housekeeper
