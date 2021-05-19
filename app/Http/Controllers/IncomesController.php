@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Income;
 use Illuminate\Http\Request;
+use DB;
+use PDF;
 
 class IncomesController extends Controller
 {
@@ -16,6 +18,22 @@ class IncomesController extends Controller
     {
         $incomes= Income::latest()->paginate(5);
         return view('incomes.index', compact('incomes'))->with (request()->input('page'));
+    }
+
+    public function showIncome(){
+        $incomes = Income::latest()->paginate(5);
+        return view('incomes.inRepo', compact('incomes'));
+      }
+
+    public function exportPDF(){
+        $incomes=Income::latest()->paginate(5);
+        $pdf= PDF::loadView('incomes.inRepo',compact('incomes'));
+        return $pdf->download('income-list.pdf');
+    }
+    public function incomesearch(){
+        $search_text= $_GET['query'];
+        $incomes=Income::where('description', 'Like', '%'.$search_text.'%')->paginate(5);
+        return view('incomes.incomese',compact('incomes'));
     }
 
     /**

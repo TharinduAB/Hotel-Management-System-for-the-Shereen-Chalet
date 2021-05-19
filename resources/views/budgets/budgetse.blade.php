@@ -32,23 +32,15 @@
     <a href               = "#useraccount" target="_blank">
     <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
     </a><br><br>
-    <hr class             = "line2"> <br>
-
-
-    
+    <hr class             = "line2"> <br><br><br>
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-right">
-            <h2><u>Budget Records</u></h2> <br><br>
+            <h2><u>Budget Search Results</u></h2>
             <form class="serachbudget" type="get" action="{{ url('/budgetsearch') }}">
                 <input type= "search" name= "query" placeholder="Search..">
-                <button type="submit" class="searchButton"><i class= "fa fa-search"></i></button>
+                <button type="submit"><i class= "fa fa-search"></i></button>
             </form>
-            <a class="btn btn-success" href="{{ route('budgets.create') }}"> Create New Budget</a><br><br>
-            <a class="btn btn-success3" href="{{ URL::to('pdfin3') }}">Export to PDF</a>
-            
-            
-
            
             </div>
         </div>
@@ -60,7 +52,7 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<br>
+<br><br>
 <div id="box3" class="box">
 <table class="table table-bordered" align="center" border="1">
     <tr>

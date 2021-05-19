@@ -35,10 +35,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add New Budget Records</h2>
+            <h2>Add New Budget Record</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('budgets.index') }}"> Back</a>
+            
         </div>
     </div>
 </div>
@@ -64,22 +64,23 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <h5>Category:</h5>
-                <input type="text" name="category" class="form-control" placeholder="Name"><br><br>
+                <input type="text" name="category" class="form-control" placeholder="Enter category"><br><br>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <h5>Description:</h5>
-                <input type="text" name="des" class="form-control" placeholder="Name"><br><br>
+                <input type="text" name="des" class="form-control" placeholder=" Enter description"><br><br>
             </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <h5>Amount:</h5>
-                <input type="number" class="form-control" name="budg"><br><br>
+                <input type="number" class="form-control" name="budg" placeholder="Enter amount"><br><br>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><br><br>
                 <button type="submit" class="btn btn-primary2">Submit</button>
+                <a class="btn btn-primary3" href="{{ route('budgets.index') }}"> Back</a>
         </div>
     </div>
 

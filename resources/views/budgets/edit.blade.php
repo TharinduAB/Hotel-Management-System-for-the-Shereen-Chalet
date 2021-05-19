@@ -37,7 +37,7 @@
             <h2>Edit Budget</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('budgets.index') }}"> Back</a>
+            
         </div>
     </div>
 </div>
@@ -79,6 +79,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><br><br>
           <button type="submit" class="btn btn-primary2">Submit</button>
+          <a class="btn btn-primary3" href="{{ route('budgets.index') }}"> Back</a>
         </div>
     </div>
 

@@ -38,7 +38,7 @@
             <h2>Input expense</h2><br>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('expenditures.index') }}"> Back</a>
+           
             
         </div>
     </div>
@@ -71,16 +71,17 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <h5>Description:</h5> <br>
-                <input type="text" name="ex_Description" class="form-control" placeholder="Name"><br><br>
+                <input type="text" name="ex_Description" class="form-control" placeholder="Enter description"><br><br>
             </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <h5>Amount:</h5> <br>
-                <input type="number" class="form-control" name="ex_Amount"><br><br>
+                <input type="number" class="form-control" name="ex_Amount" placeholder="Enter amount"><br><br>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center"><br><br>
                 <button type="submit" class="btn btn-primary2">Submit</button>
+                <a class="btn btn-primary3" href="{{ route('expenditures.index') }}"> Back</a>
         </div>
     </div>
 

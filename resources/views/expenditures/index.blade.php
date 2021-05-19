@@ -30,11 +30,19 @@
     <a href               = "#useraccount" target="_blank">
     <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
     </a><br><br>
-    <hr class             = "line2"> <br><br><br>
+    <hr class             = "line2"> <br>
+
+
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-right">
+            <h2><u>Expense Records</u></h2><br><br>
+            <form class="expensesearch" type="get" action="{{ url('/expensesearch') }}">
+                <input type= "search" name= "query" placeholder="Search..">
+                <button type="submit"><i class= "fa fa-search"></i></button>
+            </form>
             <a class="btn btn-success" href="{{ route('expenditures.create') }}"> Create New Expense</a><br><br>
+            <a class="btn btn-success3" href="{{ URL::to('pdfin2') }}">Export to PDF</a>
         </div>
     </div>
 </div>
@@ -44,7 +52,7 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<h2>Expense Records</h2><br>
+<br>
 <div id="box3" class="box">
 <table class="table table-bordered" align="center">
     <tr>
@@ -72,7 +80,7 @@
     </tr>
     @endforeach
 
-</table>
+</table><br><br><br>
 </div>
 {{ $expenditures->links() }}
 @endsection

@@ -1,8 +1,7 @@
-@extends('budgets.layout')
+@extends('incomes.layout')
 
 @section('content')
 <link rel="stylesheet" href="/css/indexex.css"/>
-
 <header>
     <div class= "header">
     <a href= "#home">
@@ -28,29 +27,21 @@
     <text> > </text>
     <a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Financial Management </a>
     <text> > </text>
-    <a href               = "#New" style="font-family:calibri;font-size:18px;"> Busget Records </a>
+    <a href               = "#New" style="font-family:calibri;font-size:18px;"> Income Records </a>
     <a href               = "#useraccount" target="_blank">
     <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
     </a><br><br>
-    <hr class             = "line2"> <br>
+    <hr class             = "line2"> <br><br><br>
 
-
-    
+    <form class="serachincome" type="get" action="{{ url('/incomesearch') }}">
+        <input type= "search" name= "query" placeholder="Search..">
+        <button type="submit"><i class= "fa fa-search"></i></button>
+    </form>
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-right">
-            <h2><u>Budget Records</u></h2> <br><br>
-            <form class="serachbudget" type="get" action="{{ url('/budgetsearch') }}">
-                <input type= "search" name= "query" placeholder="Search..">
-                <button type="submit" class="searchButton"><i class= "fa fa-search"></i></button>
-            </form>
-            <a class="btn btn-success" href="{{ route('budgets.create') }}"> Create New Budget</a><br><br>
-            <a class="btn btn-success3" href="{{ URL::to('pdfin3') }}">Export to PDF</a>
-            
-            
-
+            <h2><u>Search Results</u></h2>
            
-            </div>
         </div>
     </div>
 </div>
@@ -60,26 +51,26 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<br>
-<div id="box3" class="box">
+<br><br>
 <table class="table table-bordered" align="center" border="1">
     <tr>
         <th>ID</th>
-        <th>Category</th>
+        <th>Time created</th>
         <th>Description</th>
-        <th>Budget</th>
+        <th>Amount</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach ($budgets as $budget)
+    @foreach ($incomes as $income)
     <tr>
-        <td>{{ $budget->id }}</td>
-        <td>{{ $budget->category }}</td>
-        <td>{{ $budget->des }}</td>
-        <td>{{ $budget->budg }}</td>
+        <td>{{ $income->id }}</td>
+        <td>{{ $income->Time_info }}</td>
+        <td>{{ $income->description }}</td>
+        <td>{{ $income->amount }}</td>
         <td>
-            <form action="{{ route('budgets.destroy',$budget->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('budgets.show',$budget->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('budgets.edit',$budget->id) }}">Edit</a>
+            <form action="{{ route('incomes.destroy',$income->id) }}" method="POST">
+                
+                <a class="btn btn-info" href="{{ route('incomes.show',$income->id) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('incomes.edit',$income->id) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -88,8 +79,7 @@
     </tr>
     @endforeach
 
-</table><br><br>
-<br><br><br><br>
+</table> <br><br>
 </div>
-{{ $budgets->links() }}
+{{ $incomes->links() }}
 @endsection

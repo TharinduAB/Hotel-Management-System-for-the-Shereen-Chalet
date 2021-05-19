@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Budget;
 use Illuminate\Http\Request;
+use DB;
+use PDF;
 
 class BudgetController extends Controller
 {
@@ -16,6 +18,20 @@ class BudgetController extends Controller
     {
         $budgets= Budget::latest()->paginate(5);
         return view('budgets.index', compact('budgets'))->with (request()->input('page'));
+    }
+    public function showIncome(){
+        $budgets = Income::latest()->paginate(5);
+        return view('budgets.buRepo', compact('budgets'));
+      }
+    public function exportPDF(){
+        $budgets=Budget::latest()->paginate(5);
+        $pdf= PDF::loadView('budgets.buRepo',compact('budgets'));
+        return $pdf->download('budgets-list.pdf');
+    }
+    public function budgetsearch(){
+        $search_text= $_GET['query'];
+        $budgets=Budget::where('des', 'Like', '%'.$search_text.'%')->paginate(5);
+        return view('budgets.budgetse',compact('budgets'));
     }
 
     /**
