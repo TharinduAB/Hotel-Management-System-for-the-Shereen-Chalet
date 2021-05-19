@@ -25,14 +25,14 @@
 
 
     <div class            = "topnav">
-         <a href             = "#RoomBooking">Room Booking</a>
-         <a href             = "eventHome">Event Management</a>
-         <a href             = "#Emp">Employee Management</a>
-         <a href             = "RM">Room Management</a>
-         <a href             = "#Maint">Maintenance</a>
-         <a href             = "#Dining">Dining</a>
-         <a href             = "#Inv">Inventory</a>
-         <a href             = "#Fin">Financial</a>
+        <a href             = "/index">Room Booking</a>
+        <a href             = "eventHome">Event Management</a>
+        <a href             = "{{ route('employees.index') }}">Employee Management</a>
+        <a href             = "RM">Room Management</a>
+        <a href             = "{{ route('housekeepers.index') }}">Maintenance</a>
+        <a href             = "{{ route('dinein.create') }}">Dining</a>
+        <a href             = "InvHome">Inventory</a>
+        <a href             = "users">Financial</a>
 
     </div>
 
