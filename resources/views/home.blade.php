@@ -32,12 +32,12 @@
 <text> > </text>
 <a href               = "#New" style="font-family:calibri;font-size:18px;"> New Entry </a>
 <a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2"> <br><br><br>
 <h1><center> Welcome To Financial Management</center></h1><br>
 
-<div id="box3" class="box"><table><tr>
+<div id="box5" class="box"><table><tr>
 <td><a class="btn btn-primary4" href="{{ route('budgets.index') }}" target="_blank"> Plan Budget</a> </td>
 <td><a class="btn btn-primary5" href="{{ route('expenditures.index') }}" target="_blank"> Input Expenditures</a> </td>
 <td><a class="btn btn-primary6" href="{{ route('incomes.index') }}" target="_blank"> Input Incomes</a></td></tr> </table>
