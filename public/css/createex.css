@@ -72,6 +72,7 @@ box-shadow: 5px 5px rgb(31, 174, 209), -5px -10px rgb(25, 124, 190);
 padding: 60px 60px;
 margin-right:10%;
 margin-left: 10%;
+background-color: white;
 
 }
 input[type=text] {
@@ -137,3 +138,8 @@ background-color: #e49cac;
 border-color: #ee093b;
 
 }
+#box4 {
+  background-image: url(../pictures/p11.jpg);
+  background-size: auto; 
+  
+  }

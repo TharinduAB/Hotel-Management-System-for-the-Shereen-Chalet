@@ -1,5 +1,5 @@
-@extends('incomes.layout');
-@section('content');
+@extends('incomes.layout')
+@section('content')
 <link rel="stylesheet" href="/css/createex.css"/>
 <header>
 <div class= "header">
@@ -30,6 +30,7 @@
 <a href               = "#useraccount" target="_blank">
 <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
 </a><br><br>
+<div id="box4" class="box">
 <hr class             = "line2"> <br><br><br>
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -84,4 +85,5 @@
     </div>
     </div>
 </form>
+</div>
 @endsection

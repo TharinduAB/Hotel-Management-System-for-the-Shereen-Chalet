@@ -29,7 +29,9 @@
 <a href               = "#New" style="font-family:calibri;font-size:18px;"> New Entry </a>
 <a href               = "#useraccount" target="_blank">
 <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
+<div id="box4" class="box">
 <hr class             = "line2"> <br><br><br>
 
 <div class="row">
@@ -85,5 +87,6 @@
     </div>
 
 </form>
+</div>
 </div>
 @endsection
