@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
+     //following fields are fillable. therefore those fields can be potected from unwanted entries
     protected $fillable = [
         'EmployeeName', 
         'BirthDate',
