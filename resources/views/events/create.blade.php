@@ -31,8 +31,7 @@
 <a href               = "../eventHome" style="font-family:calibri;font-size:18px;"> Event Management </a><text> > </text>
 <a href               = "{{ route('events.index') }}" style="font-family:calibri;font-size:18px;"> View Events </a> </a><text> > </text>
 <a href               = "{{ route('events.create') }}" style="font-family:calibri;font-size:18px;"> Create Event </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button></a><br><br>
+
 
 <hr class             = "line2">
 
