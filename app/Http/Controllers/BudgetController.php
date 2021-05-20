@@ -19,10 +19,12 @@ class BudgetController extends Controller
         $budgets= Budget::latest()->paginate(5);
         return view('budgets.index', compact('budgets'))->with (request()->input('page'));
     }
+    //show results in burepo
     public function showIncome(){
         $budgets = Income::latest()->paginate(5);
         return view('budgets.buRepo', compact('budgets'));
       }
+      //genarate pdf
     public function exportPDF(){
         $budgets=Budget::latest()->paginate(5);
         $pdf= PDF::loadView('budgets.buRepo',compact('budgets'));
@@ -52,6 +54,7 @@ class BudgetController extends Controller
      */
     public function store(Request $request)
     {
+        //validations create for form
         $request->validate([
             'category' => 'required',
             'des' => 'required',
@@ -92,6 +95,7 @@ class BudgetController extends Controller
      */
     public function update(Request $request, Budget $budget)
     {
+        //validations update for form
         $request->validate([
             'category' => 'required',
             'des' => 'required',
