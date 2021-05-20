@@ -86,7 +86,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Last Paid Date:</strong>
-                    <input type="date" name="LastPaidDate" value="{{ $employee->Salary }}" class="form-control" placeholder="Year / Month / Date">
+                    <input type="date" name="LastPaidDate" value="{{ $employee->LastPaidDate }}" class="form-control" placeholder="Year / Month / Date">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
