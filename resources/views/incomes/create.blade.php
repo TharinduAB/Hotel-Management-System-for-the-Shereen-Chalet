@@ -28,7 +28,7 @@
 <text> > </text>
 <a href               = "#New" style="font-family:calibri;font-size:18px;"> Add Income </a>
 <a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 
 </a><br><br>
 <div id="box4" class="box">

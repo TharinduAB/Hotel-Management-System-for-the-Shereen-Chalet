@@ -14,9 +14,9 @@ class BudgetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //will show the list of budget records
     {
-        $budgets= Budget::latest()->paginate(5);
+        $budgets= Budget::latest()->paginate(5); //get budgets and store them in budgets variable
         return view('budgets.index', compact('budgets'))->with (request()->input('page'));
     }
     //show results in burepo
@@ -60,8 +60,8 @@ class BudgetController extends Controller
             'des' => 'required',
             'budg' => 'required',
         ]);
-        Budget::create($request->all());
-        return redirect()->route('budgets.index')->with ('success', 'Budget Entered Successfully');
+        Budget::create($request->all());//create budget in database using model
+        return redirect()->route('budgets.index')->with ('success', 'Budget Entered Successfully');//redirect to index view with success message
     }
 
     /**
@@ -70,9 +70,9 @@ class BudgetController extends Controller
      * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function show(Budget $budget)
+    public function show(Budget $budget) //inject the budget clicked on view
     {
-        return view('budgets.show', compact('budget'));
+        return view('budgets.show', compact('budget')); //inject the budget clicked into view
     }
 
     /**
@@ -83,7 +83,7 @@ class BudgetController extends Controller
      */
     public function edit(Budget $budget)
     {
-        return view('budgets.edit', compact('budget'));
+        return view('budgets.edit', compact('budget')); //view expect budget that needed to update so we pass budget
     }
 
     /**
@@ -101,8 +101,10 @@ class BudgetController extends Controller
             'des' => 'required',
             'budg' => 'required',
         ]);
-        $budget->update($request->all());
-        return redirect()->route('budgets.index')->with ('success', 'Budget Updated Successfully');
+        //update budget in database 
+        $budget->update($request->all()); 
+        //redirect to index view with success message
+        return redirect()->route('budgets.index')->with ('success', 'Budget Updated Successfully'); 
     }
 
     /**

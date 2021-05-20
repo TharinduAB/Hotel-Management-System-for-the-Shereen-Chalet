@@ -29,7 +29,7 @@
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> Show Budget Record </a>
     <a href               = "#useraccount" target="_blank">
-    <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
     </a><br><br>
     <hr class             = "line2"> <br><br><br>
 <div class="row">
@@ -48,7 +48,7 @@
         <div class="form-group">
             <table><tr>
            <td>Category:</td>
-           <td> {{ $budget->category }}</td></tr>
+           <td> {{ $budget->category }}</td></tr> <!--inject budget to this view from the controller-->
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

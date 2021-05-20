@@ -58,7 +58,7 @@
     
 @endif
 
-<form action="{{ route('budgets.store') }}" method="POST">
+<form action="{{ route('budgets.store') }}" method="POST"><!--when submitted it will go to route store-->
     <div id="box3" class="box">
     @csrf
 

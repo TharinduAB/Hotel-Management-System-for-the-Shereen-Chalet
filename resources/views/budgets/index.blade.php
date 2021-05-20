@@ -30,7 +30,7 @@
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> Busget Records </a>
     <a href               = "#useraccount" target="_blank">
-    <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+    
     </a><br><br>
     <hr class             = "line2"> <br>
 
@@ -70,16 +70,17 @@
         <th>Budget</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach ($budgets as $budget)
+    @foreach ($budgets as $budget) <!--this 'budgets' is the php variable inside index() of controller class, these are the bu records fetched from db-->
     <tr>
+        <!--interate trough that variable using for each loop-->
         <td>{{ $budget->id }}</td>
         <td>{{ $budget->category }}</td>
         <td>{{ $budget->des }}</td>
         <td>{{ $budget->budg }}</td>
         <td>
             <form action="{{ route('budgets.destroy',$budget->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('budgets.show',$budget->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('budgets.edit',$budget->id) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('budgets.show',$budget->id) }}">Show</a><!--route for show budget record-->
+                <a class="btn btn-primary" href="{{ route('budgets.edit',$budget->id) }}">Edit</a><!--route for editing budget record-->
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
