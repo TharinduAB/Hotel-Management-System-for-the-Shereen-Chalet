@@ -7,10 +7,7 @@
 <text> > </text>
 <a href               = "{{ route('tasks.index') }}" style="font-family:calibri;font-size:18px;">Task List</a>
 <text> > Edit Task</text>
-
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
-</a><br><br>
+<br>
 <hr class             = "line2">
 @endsection
 
