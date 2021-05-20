@@ -7,10 +7,7 @@
         <text> > </text>
         <a href               = "/RM" style="font-family:calibri;font-size:18px;"> Room Management </a>
         <text> > View Room</text>
-        
-        <a href               = "#useraccount" target="_blank">
-        <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
-        </a><br><br>
+
         <hr class             = "line2">
     </div>
 
