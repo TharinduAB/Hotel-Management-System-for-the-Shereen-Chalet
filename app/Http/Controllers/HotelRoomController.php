@@ -93,7 +93,7 @@ class HotelRoomController extends Controller
             {//this method will save the room details inside the DB and redirect the user to the created room page
                 //1) validate the input fields of the form
                 $request-> validate([
-                    'roomNo' => 'required|string',
+                    'roomNo' => 'required|unique:hotel_rooms',
                     'floorNo' => 'required',
                     'roomType' => 'required', 
                     'noOfBeds' => 'required',

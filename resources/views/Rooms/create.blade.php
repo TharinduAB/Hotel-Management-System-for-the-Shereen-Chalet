@@ -34,7 +34,7 @@
             <div class="wrapper4">
                
                             <!--if any errors are there in the input data, this alert will shown-->
-                            {{-- @if($errors->any())
+                            @if($errors->any())
                                 <div class="alert alert-danger">
                                     <strong>something wrong with your input data !!</strong>
                                     <ul>
@@ -43,7 +43,7 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                            @endif --}}
+                            @endif
         
                             <form action="" method="POST" id="form2">
                                 @csrf
@@ -90,13 +90,13 @@
                                 <div class="row">
                                     <div class="control-group col-6 mt-3">
                                         <label for="price" style="color: white">Price (Rs:)</label>
-                                        <input type="text" class="form-control" step="any" id="price" name="price" placeholder="2000.00" required>
+                                        <input type="number" class="form-control" step="any" id="price" name="price" placeholder="2000.00" required>
                                     </div>
                                     <div class="control-group col-6 mt-3">
                                         <label for="roomStatus" style="color: white">Room Status </label>
                                         <select  class="form-control" name="roomStatus" id="roomStatus">
                                             <option value="Available">Available</option>
-                                            <option value="underRenovation">under Renovation</option>
+                                            <option value="under Renovation">under Renovation</option>
                                         </select>
                                         <text style="color: white">(if the room is under renovation- set the status as 'Unavailable')</text>
                                     </div>
