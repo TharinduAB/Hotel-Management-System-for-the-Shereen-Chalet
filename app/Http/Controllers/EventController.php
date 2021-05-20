@@ -19,17 +19,23 @@ class EventController extends Controller
         $events=Event :: latest()->paginate(5);
 
         return view('events.index',compact('events'))->with(request()->input('page'));
+
+        //table paginate
     }
 
     public function exportEventPDF(){
         $events = Event::latest()->paginate(15);
         $pdf=PDF::loadview('events.indexpdf',compact('events'));
         return $pdf->download('Event-list.pdf');
+
+        //generate pdf
     }
 
 
 
     public function eventSearch(){
+
+         //search function 
 
         $search_text = $_GET['query'];
         $events = Event::where('fname','Like', '%'.$search_text.'%')->orWhere('lname','Like', '%'.$search_text.'%')
@@ -42,6 +48,8 @@ class EventController extends Controller
          ->orWhere('participantNo','Like', '%'.$search_text.'%')->paginate(50);
 
         return view('events.searchEvent',compact('events'));
+
+       
     }
 
 
@@ -58,6 +66,8 @@ class EventController extends Controller
     public function create()
     {
         return view('events.create');
+
+        //events create
     }
 
     /**
@@ -93,6 +103,8 @@ class EventController extends Controller
     public function show(Event $event)
     {
         return view('events.show',compact('event'));
+
+        //show events
     }
 
     /**
@@ -104,6 +116,8 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         return view('events.edit',compact('event'));
+
+        //edit events
     }
 
     /**
