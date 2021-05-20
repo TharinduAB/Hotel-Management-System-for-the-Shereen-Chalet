@@ -132,13 +132,13 @@ class EmployeeController extends Controller
     // Generate PDF
     public function createPDF() {
         // retreive all records from db
-        $employees = Employee::latest()->paginate(3);
+        $employees = Employee::all();
   
         // share data to view
         view()->share('employees',$employees);
         $pdf = PDF::loadView('employees.report',$employees);
   
         // download PDF file with download method
-        return $pdf->download('pdf_file.pdf');
+        return $pdf->download('Employee_Details_Report.pdf');
       }
 }
