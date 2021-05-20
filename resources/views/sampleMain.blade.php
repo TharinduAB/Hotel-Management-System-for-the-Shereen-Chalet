@@ -32,8 +32,8 @@
 <a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
 <text> > </text>
 <a href               = "#New" style="font-family:calibri;font-size:18px;"> New Entry </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
+
 </a><br><br>
 <hr class             = "line2">
 
