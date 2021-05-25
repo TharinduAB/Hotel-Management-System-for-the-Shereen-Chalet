@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <title>Maintenance Management</title>
         <link href    = "{{asset("css/main.css")}}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
@@ -16,23 +17,22 @@
 </div>
 </header>
 <div class            = "topnav">
-  <a href             = "#RoomBooking">Room Booking</a>
-  <a href             = "#Event">Event Management</a>
-  <a href             = "#Emp">Employee Management</a>
+  <a href             = "{{ url('index') }}">Room Booking</a>
+  <a href             = "{{ url('/eventHome') }}">Event Management</a>
+  <a href             = "{{ route('employees.index') }}">Employee Management</a>
   <a href             = "../RM">Room Management</a>
   <a href             = "{{ route('housekeepers.index') }}">Maintenance</a>
-  <a href             = "#Dining">Dining</a>
-  <a href             = "#Inv">Inventory</a>
-  <a href             = "#Fin">Financial</a>
+  <a href             = "{{ route('dinein.index') }}">Dining</a>
+  <a href             = "{{ url('InvHome') }}">Inventory</a>
+  <a href             = "{{ url('/users') }}">Financial</a>
 </div>
 <br>
 <div>
   @yield('content1')
 </div>
-  <div class="container">
-    <br>
-    @yield('content')
-  </div>
+<div>
+  @yield('content')
+</div>
 </body>
 
 </html>

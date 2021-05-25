@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Housekeeper;
 use Illuminate\Http\Request;
+use PDF;
 
 class HousekeeperController extends Controller
 {
@@ -14,7 +15,7 @@ class HousekeeperController extends Controller
      */
     public function index()
     {
-        $housekeepers = Housekeeper::latest()->paginate(8);
+        $housekeepers = Housekeeper::latest()->paginate(5);
         return view('housekeepers.index', compact('housekeepers'))->with(request()->input('page'));
 
     }
@@ -47,7 +48,7 @@ class HousekeeperController extends Controller
             'city'=>'required',
             'hired_Agency_Name'=>'required',
             'gender'=>'required',
-            'contact_Number'=>'required|digits:10'
+            'contact_Number'=>'required|unique:housekeepers'
         ]);
 
         //create a new housekeeper
@@ -122,5 +123,16 @@ class HousekeeperController extends Controller
         //redirect user and display success message
         return redirect()->route('housekeepers.index')->with('success','A housekeeper details deleted successfully');
 
+    }
+
+    public function exportHKDetailsPDF(){
+        // retreive all records from db
+        $housekeepers = Housekeeper::all();
+  
+        // share data to view
+        $pdf = PDF::loadView('housekeepers.report', compact('housekeepers'));
+  
+        //download PDF file with download method
+        return $pdf->download('Housekeeper_Details.pdf');
     }
 }

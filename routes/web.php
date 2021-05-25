@@ -64,9 +64,10 @@ Route::resource('employees',EmployeeController::class);
 //route for report generation function
 Route::get('/createpdf',[\App\Http\Controllers\EmployeeController::class,'createPDF']);
 
-//-----------------------------------------------------routes of Housekeeper section are below----------------------------------------------
+//-----------------------------------------------------routes of Maintenance section are below----------------------------------------------
 Route::resource('housekeepers', HousekeeperController::class);
 Route::resource('tasks', TaskController::class);
+Route::get('exportToPdf',[HousekeeperController::class,'exportHKDetailsPDF']);
 
 //------------------------------------------------------routes of Financial section are below-------------------------------------------------
 Route::get('/users', function () {
