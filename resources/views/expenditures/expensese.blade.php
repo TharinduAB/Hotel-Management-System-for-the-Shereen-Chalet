@@ -26,7 +26,7 @@
     <text> > </text>
     <a href               = "/users" style="font-family:calibri;font-size:18px;"> Financial Management </a>
     <text> > </text>
-    <a href               = "{{ route('expenditures.index') }}" style="font-family:calibri;font-size:18px;"> Income records </a>
+    <a href               = "{{ route('expenditures.index') }}" style="font-family:calibri;font-size:18px;"> Expense records </a>
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> Search Entry </a>
     <a href               = "#useraccount" target="_blank">
