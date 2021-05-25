@@ -8,9 +8,7 @@
     <a href               = "{{ route('employees.index') }}" style="font-family:calibri;font-size:18px;"> Employee Management </a>
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> All Employees </a>
-    <a href               = "#useraccount" target="_blank">
-    <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
-    </a><br><br>
+    <br><br>
     <hr class             = "line2">
 </div>     
 
@@ -22,6 +20,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('employees.create') }}"> Add New Employee</a>
+                <a class="btn btn-danger font-weight-bold ml-2 float-right  mt-3 " href="{{ URL::to('/createpdf') }}">Report</a>
             </div>
         </div>
     </div>

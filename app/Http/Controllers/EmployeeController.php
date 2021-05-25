@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use PDF;
 
 class EmployeeController extends Controller
 {
@@ -28,6 +29,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
+        //show form to add a new employee
         return view('employees.create');
     }
 
@@ -39,7 +41,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //Vallidate the user input
+        //Vallidate the user input fields of the form
         $request->validate([
             'EmployeeName' => 'required',
             'BirthDate' => 'required',
@@ -67,7 +69,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        //display details of an employee in show view
         return view('employees.show',compact('employee'));
     }
 
@@ -79,7 +81,7 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        //display the form to edit details of an employee 
         return view('employees.edit',compact('employee'));
     }
 
@@ -104,8 +106,10 @@ class EmployeeController extends Controller
             'LastPaidDate' => 'required',
         ]);
 
+        //save the edited employee details and update method is used to send the updated data into the DB
         $employee->update($request->all());
-  
+
+        //redirect to the index view which displays the table with employee data and display a msg to notify that the operation is successful
         return redirect()->route('employees.index')
                         ->with('success','Employee updated successfully');
     }
@@ -118,10 +122,23 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        //delete an employee
         $employee->delete();
   
         return redirect()->route('employees.index')
                         ->with('success','Employee deleted successfully');
     }
+
+    // Generate PDF
+    public function createPDF() {
+        // retreive all records from db
+        $employees = Employee::all();
+  
+        // share data to view
+        view()->share('employees',$employees);
+        $pdf = PDF::loadView('employees.report',$employees);
+  
+        // download PDF file with download method
+        return $pdf->download('Employee_Details_Report.pdf');
+      }
 }
