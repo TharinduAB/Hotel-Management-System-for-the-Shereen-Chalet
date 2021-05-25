@@ -30,7 +30,8 @@
 <hr class             = "line2">
 <br>
 <a href               = "SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
-<br><br>
+
+
 <hr class             = "line2">
 <div class="grid-container">
 <div class="container">

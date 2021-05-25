@@ -17,25 +17,24 @@
 
 
 <div class            = "topnav">
-<a href             = "#RoomBooking">Room Booking</a>
-<a href             = "eventHome">Event Management</a>
-<a href             = "#Emp">Employee Management</a>
-<a href             = "../RM">Room Management</a>
-<a href             = "#Maint">Maintenance</a>
-<a href             = "#Dining">Dining</a>
-<a href             = "#Inv">Inventory</a>
-<a href             = "#Fin">Financial</a>
+    <a href             = "/index">Room Booking</a>
+    <a href             = "../eventHome">Event Management</a>
+    <a href             = "{{ route('employees.index') }}">Employee Management</a>
+    <a href             = "../RM">Room Management</a>
+    <a href             = "{{ route('housekeepers.index') }}">Maintenance</a>
+    <a href             = "{{ route('dinein.create') }}">Dining</a>
+    <a href             = "../InvHome">Inventory</a>
+    <a href             = "../users">Financial</a>
 
 </div>
 
 <hr class             = "line2"><br>
 
-<a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a><text> > </text>
-<a href               = "eventHome" style="font-family:calibri;font-size:18px;"> Event Management </a><text> > </text>
+<a href               = "../SCHome" style="font-family:calibri;font-size:18px;"> Home  </a><text> > </text>
+<a href               = "../eventHome" style="font-family:calibri;font-size:18px;"> Event Management </a><text> > </text>
 <a href               = "{{ route('events.index') }}" style="font-family:calibri;font-size:18px;"> View All Events </a> </a><text> > </text>
 <a href               = "{{ route('events.show',$event->id) }}" style="font-family:calibri;font-size:18px;"> Show Event </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button></a><br><br>
+
 
 <hr class             = "line2">
 

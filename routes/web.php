@@ -81,6 +81,8 @@ Route::resource('budgets',BudgetController::class);
 
 Route::get('/eventHome',[frontEndController::class,'indexEventHome']);
 Route::resource('events',EventController::class);
+Route::get('/eventPDF',[EventController::class,'exportEventPDF']);
+Route::get('/eventSearch',[EventController::class,'eventSearch']);
 
 //-----------------------------------------------------routes of Booking management section are below
 Route::view('create','user.create');
