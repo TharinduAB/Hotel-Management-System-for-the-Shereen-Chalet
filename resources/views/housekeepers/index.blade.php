@@ -19,7 +19,7 @@
 
       <div class="row">
         <div class = "col-lg-12"><br>
-        <h3 style="margin-left:50px;"><u><b>List of Housekeeper</b></u></h3>
+        <h3 style="margin-left:50px;"><u><b>List of Housekeepers</b></u></h3>
           <div class="float-right">
             <div class="btn-group" role="group" aria-label="Basic example">
               <a class="btn btn-outline-primary" href = "{{ route('housekeepers.create') }}">Add Housekeeper</a>
