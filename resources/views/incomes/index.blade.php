@@ -11,43 +11,51 @@
     </div>
     </header>
     <div class            = "topnav">
-    <a href             = "#RoomBooking">Room Booking</a>
-    <a href             = "#Event">Event Management</a>
-    <a href             = "#Emp">Employee Management</a>
-    <a href             = "#RoomMana">Room Management</a>
-    <a href             = "#Maint">Maintenance</a>
-    <a href             = "#Dining">Dining</a>
-    <a href             = "#Inv">Inventory</a>
-    <a href             = "#Fin">Financial</a>
+        <a href             = "/index">Room Booking</a>
+        <a href             = "/eventHome">Event Management</a>
+        <a href             = "{{ route('employees.index') }}">Employee Management</a>
+        <a href             = "/RM">Room Management</a>
+        <a href             = "{{ route('housekeepers.index') }}">Maintenance</a>
+        <a href             = "{{ route('dinein.create') }}">Dining</a>
+        <a href             = "/InvHome">Inventory</a>
+        <a href             = "/users">Financial</a>
     
     </div>
     <hr class             = "line2">
     <br>
-    <a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a>
+    <a href               = "../SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
     <text> > </text>
-    <a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Financial Management </a>
+    <a href               = "/users" style="font-family:calibri;font-size:18px;"> Financial Management </a>
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> Income Records </a>
     <a href               = "#useraccount" target="_blank">
-    <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
     </a><br><br>
-    <hr class             = "line2"> <br><br><br>
+    <hr class             = "line2"> <br>
+
+
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('incomes.create') }}"> Create New Income</a><br><br><br>
+            <h2><u>Income Records</u></h2><br><br>
+            <form class="searchTerm" type="get" action="{{ url('/incomesearch') }}">
+                <input type= "search" name= "query" placeholder="Search..">
+                <button type="submit"><i class= "fa fa-search"></i></button>
+            </form>
+            <a class="btn btn-success " href="{{ route('incomes.create') }}"> Create New Income</a><br><br>
+            <a class="btn btn-success3" href="{{ URL::to('pdfin') }}">Export to PDF</a>
+           
         </div>
     </div>
 </div>
 
 @if ($message = Session::get('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success"> 
         <p>{{ $message }}</p>
     </div>
 @endif
-<h2>Income Records</h2><br>
-<div id="box3" class="box">
-<table class="table table-bordered">
+<br>
+<table class="table table-bordered" align="center" border="1">
     <tr>
         <th>ID</th>
         <th>Time created</th>
@@ -63,6 +71,7 @@
         <td>{{ $income->amount }}</td>
         <td>
             <form action="{{ route('incomes.destroy',$income->id) }}" method="POST">
+                
                 <a class="btn btn-info" href="{{ route('incomes.show',$income->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('incomes.edit',$income->id) }}">Edit</a>
                 @csrf
@@ -73,7 +82,7 @@
     </tr>
     @endforeach
 
-</table>
+</table> <br><br>
 </div>
 {{ $incomes->links() }}
 @endsection

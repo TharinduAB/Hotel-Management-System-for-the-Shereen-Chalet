@@ -2,6 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="/css/indexex.css"/>
+
 <header>
     <div class= "header">
     <a href= "#home">
@@ -11,31 +12,45 @@
     </div>
     </header>
     <div class            = "topnav">
-    <a href             = "#RoomBooking">Room Booking</a>
-    <a href             = "#Event">Event Management</a>
-    <a href             = "#Emp">Employee Management</a>
-    <a href             = "#RoomMana">Room Management</a>
-    <a href             = "#Maint">Maintenance</a>
-    <a href             = "#Dining">Dining</a>
-    <a href             = "#Inv">Inventory</a>
-    <a href             = "#Fin">Financial</a>
+        <a href             = "/index">Room Booking</a>
+        <a href             = "/eventHome">Event Management</a>
+        <a href             = "{{ route('employees.index') }}">Employee Management</a>
+        <a href             = "/RM">Room Management</a>
+        <a href             = "{{ route('housekeepers.index') }}">Maintenance</a>
+        <a href             = "{{ route('dinein.create') }}">Dining</a>
+        <a href             = "/InvHome">Inventory</a>
+        <a href             = "users">Financial</a>
     
     </div>
     <hr class             = "line2">
     <br>
-    <a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a>
+    <a href               = "../SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
     <text> > </text>
-    <a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Financial Management </a>
+    <a href               = "/users" style="font-family:calibri;font-size:18px;"> Financial Management </a>
     <text> > </text>
     <a href               = "#New" style="font-family:calibri;font-size:18px;"> Busget Records </a>
     <a href               = "#useraccount" target="_blank">
-    <button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+    
     </a><br><br>
-    <hr class             = "line2"> <br><br><br>
+    <hr class             = "line2"> <br>
+
+
+    
 <div class="row">
     <div class="col-lg-12">
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('budgets.create') }}"> Create New Budget</a>
+            <h2><u>Budget Records</u></h2> <br><br>
+            <form class="serachbudget" type="get" action="{{ url('/budgetsearch') }}">
+                <input type= "search" name= "query" placeholder="Search..">
+                <button type="submit" class="searchButton"><i class= "fa fa-search"></i></button>
+            </form>
+            <a class="btn btn-success" href="{{ route('budgets.create') }}"> Create New Budget</a><br><br>
+            <a class="btn btn-success3" href="{{ URL::to('pdfin3') }}">Export to PDF</a>
+            
+            
+
+           
+            </div>
         </div>
     </div>
 </div>
@@ -45,9 +60,9 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<h2>Budget Records</h2><br>
+<br>
 <div id="box3" class="box">
-<table class="table table-bordered">
+<table class="table table-bordered" align="center" border="1">
     <tr>
         <th>ID</th>
         <th>Category</th>
@@ -55,16 +70,17 @@
         <th>Budget</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach ($budgets as $budget)
+    @foreach ($budgets as $budget) <!--this 'budgets' is the php variable inside index() of controller class, these are the bu records fetched from db-->
     <tr>
+        <!--interate trough that variable using for each loop-->
         <td>{{ $budget->id }}</td>
         <td>{{ $budget->category }}</td>
         <td>{{ $budget->des }}</td>
         <td>{{ $budget->budg }}</td>
         <td>
             <form action="{{ route('budgets.destroy',$budget->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('budgets.show',$budget->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('budgets.edit',$budget->id) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('budgets.show',$budget->id) }}">Show</a><!--route for show budget record-->
+                <a class="btn btn-primary" href="{{ route('budgets.edit',$budget->id) }}">Edit</a><!--route for editing budget record-->
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -73,7 +89,8 @@
     </tr>
     @endforeach
 
-</table>
+</table><br><br>
+<br><br><br><br>
 </div>
 {{ $budgets->links() }}
 @endsection

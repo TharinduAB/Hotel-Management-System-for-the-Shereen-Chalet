@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Budget;
 use Illuminate\Http\Request;
+use DB;
+use PDF;
 
 class BudgetController extends Controller
 {
@@ -12,10 +14,26 @@ class BudgetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //will show the list of budget records
     {
-        $budgets= Budget::latest()->paginate(5);
+        $budgets= Budget::latest()->paginate(5); //get budgets and store them in budgets variable
         return view('budgets.index', compact('budgets'))->with (request()->input('page'));
+    }
+    //show results in burepo
+    public function showIncome(){
+        $budgets = Income::latest()->paginate(5);
+        return view('budgets.buRepo', compact('budgets'));
+      }
+      //genarate pdf
+    public function exportPDF(){
+        $budgets=Budget::latest()->paginate(5);
+        $pdf= PDF::loadView('budgets.buRepo',compact('budgets'));
+        return $pdf->download('budgets-list.pdf');
+    }
+    public function budgetsearch(){
+        $search_text= $_GET['query'];
+        $budgets=Budget::where('des', 'Like', '%'.$search_text.'%')->paginate(5);
+        return view('budgets.budgetse',compact('budgets'));
     }
 
     /**
@@ -36,13 +54,14 @@ class BudgetController extends Controller
      */
     public function store(Request $request)
     {
+        //validations create for form
         $request->validate([
             'category' => 'required',
             'des' => 'required',
             'budg' => 'required',
         ]);
-        Budget::create($request->all());
-        return redirect()->route('budgets.index')->with ('success', 'Budget Entered Successfully');
+        Budget::create($request->all());//create budget in database using model
+        return redirect()->route('budgets.index')->with ('success', 'Budget Entered Successfully');//redirect to index view with success message
     }
 
     /**
@@ -51,9 +70,9 @@ class BudgetController extends Controller
      * @param  \App\Models\Budget  $budget
      * @return \Illuminate\Http\Response
      */
-    public function show(Budget $budget)
+    public function show(Budget $budget) //inject the budget clicked on view
     {
-        return view('budgets.show', compact('budget'));
+        return view('budgets.show', compact('budget')); //inject the budget clicked into view
     }
 
     /**
@@ -64,7 +83,7 @@ class BudgetController extends Controller
      */
     public function edit(Budget $budget)
     {
-        return view('budgets.edit', compact('budget'));
+        return view('budgets.edit', compact('budget')); //view expect budget that needed to update so we pass budget
     }
 
     /**
@@ -76,13 +95,16 @@ class BudgetController extends Controller
      */
     public function update(Request $request, Budget $budget)
     {
+        //validations update for form
         $request->validate([
             'category' => 'required',
             'des' => 'required',
             'budg' => 'required',
         ]);
-        $budget->update($request->all());
-        return redirect()->route('budgets.index')->with ('success', 'Budget Updated Successfully');
+        //update budget in database 
+        $budget->update($request->all()); 
+        //redirect to index view with success message
+        return redirect()->route('budgets.index')->with ('success', 'Budget Updated Successfully'); 
     }
 
     /**

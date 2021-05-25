@@ -73,9 +73,23 @@ Route::get('exportToPdf',[HousekeeperController::class,'exportHKDetailsPDF']);
 Route::get('/users', function () {
     return view('home');
 });
+Route::get('/users/hm', function () {
+    return view('incomes.inRepo');
+});
 Route::resource('incomes',IncomesController::class);
 Route::resource('expenditures',ExpenditureController::class);
 Route::resource('budgets',BudgetController::class);
+Route::get('/us', [IncomesController::class, 'showIncome']);
+Route::get('/us2', [ExpenditureController::class, 'showExpense']);
+Route::get('/us3', [BudgetController::class, 'showbu']);
+Route::get('pdfin',[IncomesController::class,'exportPDF']);
+Route::get('pdfin2',[ExpenditureController::class,'exportPDF']);
+Route::get('pdfin3',[BudgetController::class,'exportPDF']);
+Route::get('/incomesearch',[IncomesController::class,'incomesearch']);
+Route::get('/budgetsearch',[BudgetController::class,'budgetsearch']);
+Route::get('/expensesearch',[ExpenditureController::class,'expensesearch']);
+
+
 
 //------------------------------------------------------routes of Event management section are below
 

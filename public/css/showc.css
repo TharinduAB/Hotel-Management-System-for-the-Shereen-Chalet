@@ -54,7 +54,3 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     padding: 15px 30px;
     margin-left: 80%;
 }
-body {
-  background-image: url("/pictures/p9.jpg");
-  background-size: auto; 
- }

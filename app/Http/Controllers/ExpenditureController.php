@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Expenditure;
 use Illuminate\Http\Request;
-
+use DB;
+use PDF;
 class ExpenditureController extends Controller
 {
     /**
@@ -16,6 +17,20 @@ class ExpenditureController extends Controller
     {
         $expenditures= Expenditure::latest()->paginate(5);
         return view('expenditures.index', compact('expenditures'))->with (request()->input('page'));
+    }
+    public function showExpense(){
+        $expenditures = Expenditure::latest()->paginate(5);
+        return view('expenditures.exRepo', compact('expenditures'));
+      }
+    public function exportPDF(){
+        $expenditures=Expenditure::latest()->paginate(5);
+        $pdf= PDF::loadView('expenditures.exRepo',compact('expenditures'));
+        return $pdf->download('expense-list.pdf');
+    }
+    public function expensesearch(){
+        $search_text= $_GET['query'];
+        $expenditures=Expenditure::where('ex_Description', 'Like', '%'.$search_text.'%')->paginate(5);
+        return view('expenditures.expensese',compact('expenditures'));
     }
 
     /**
