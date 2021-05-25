@@ -32,8 +32,7 @@
 <a href               = "SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
 <text> > </text>
 <a href               = "InvHome" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2">
 <div class="grid-container">

@@ -4,7 +4,9 @@
         <title>Inventory Management New Entry</title>
         <link href    = "/css/main.css" rel="stylesheet">
         <link href    = "/css/invCreate.css" rel="stylesheet">
+        <link href    = "/css/table.css" rel="stylesheet">
         <link href    = "/css/date.css" rel="stylesheet">
+        <link href    = "/css/repButton.css" rel="stylesheet">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -34,27 +36,21 @@
 <a href               = "InvHome" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
 <text> > </text>
 <a href               = "Reports" style="font-family:calibri;font-size:18px;"> Reports </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2">
 
 <div id               = "ssDiv">
-  
-    <form action      = "#createdb">
-      <label for      = "repId">Report ID : </label>
-      <input type     = "text" id="repId" name="Report ID"><br>
-      <label for      = "repName">Report Name : </label>
-      <input type     = "text" id="repName" name="Report Name"><br>
-      <label for      = "supDes">Description : </label>
-      <input type     = "text" id="supDes" name="Description"><br>
-      <label for      = "date">Year / Month : </label>
-      <input type     = "date" id="date" name="Year / Month"><br>
-      
-      <input type     = "submit" value="Generate">
-    </form>
-  
+  <img src="/pictures/reportlogo1.jpg" height="400px" width="800px">
+
+  <a href="{{ URL::to('InvPDF') }}">
+    <button class="button button3">Inventory Report </button>
+  </a>
+  <a href="{{ URL::to('InvREP') }}">
+  <button class="button button3">Return Report</button>
+</a>
 </div> 
+
 
 
 <hr class             = "line2">

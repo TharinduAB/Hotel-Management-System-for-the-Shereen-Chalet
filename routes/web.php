@@ -16,6 +16,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\FaultController;
 use App\Http\Controllers\UpdateController;
 
 /*
@@ -101,7 +102,11 @@ Route::post("Return",[ReturnController::class,'itemReturns']);
 
 Route::view("InvView",'InvView');
 Route::get('InvView',[ViewController::class,'show']);
+Route::get('InvReport',[ViewController::class,'index']);
+Route::get('InvPDF',[ViewController::class,'exportPDF']);
 
+Route::get('InvReturns',[FaultController::class,'index']);
+Route::get('InvREP',[FaultController::class,'exportPDF']);
 
 Route::view("InvDelete",'InvDelete');
 Route::get('InvDelete',[DeleteController::class,'view']);

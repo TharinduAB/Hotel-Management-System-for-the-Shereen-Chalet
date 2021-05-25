@@ -34,7 +34,7 @@
 <text> > </text>
 <a href               = "InvCreate" style="font-family:calibri;font-size:18px;"> New Entry </a>
 <a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2">
 <div id               = "ssDiv">
@@ -56,9 +56,9 @@
       <label for      = "supName">Supplier's Name : </label>
       <input type     = "text" id="supName" name="SuppliersName" required><br>
       <label for      = "uPrice">Unit Price : </label>
-      <input type     = "text" id="uPrice" name="UnitPrice" placeholder="Rs." required><br>
+      <input type     = "number" id="uPrice" name="UnitPrice" placeholder="Rs." required><br>
       <label for      = "qty">Quantity : </label>
-      <input type     = "text" id="qty" name="Quantity" required><br>
+      <input type     = "number" id="qty" name="Quantity" required><br>
       <label for      = "des">Description : </label>
       <input type     = "text" id="des" name="Description" placeholder="More Details.."><br>
       <input type     = "submit" value="Submit">

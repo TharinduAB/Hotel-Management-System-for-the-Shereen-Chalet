@@ -19,10 +19,11 @@ class UpdateController extends Controller
     function update(Request $req)
     {
         $data=Item::find($req->id);
+        
         $data->item_ID=$req->ItemID;
         $data->item_Name=$req->ItemName;
         $data->item_Type=$req->ItemType;
-        $data->supplier_Name=$req->SupplierName;
+        $data->supplier_Name=$req->SuppliersName;
         $data->unit_Price=$req->UnitPrice;
         $data->quantity=$req->Quantity;
         $data->description=$req->Description;

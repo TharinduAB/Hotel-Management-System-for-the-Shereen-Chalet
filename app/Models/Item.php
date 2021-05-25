@@ -9,6 +9,6 @@ class Item extends Model
 {
     use HasFactory;
     protected $fillable = ['item_No','item_Name','item_Type','supplier_Name','unit_Price','quantity','description'];
-    public $timestamps=false;
+    
 
 }

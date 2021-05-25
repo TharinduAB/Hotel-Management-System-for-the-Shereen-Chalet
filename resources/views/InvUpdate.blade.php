@@ -28,13 +28,12 @@
 </div>
 <hr class             = "line2">
 <br>
-<a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a>
+<a href               = "SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
 <text> > </text>
-<a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
+<a href               = "InvHome" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
 <text> > </text>
-<a href               = "#New" style="font-family:calibri;font-size:18px;"> New Entry </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+<a href               = "InvUpdate" style="font-family:calibri;font-size:18px;"> Update Entry </a>
+
 </a><br><br>
 <hr class             = "line2">
 
