@@ -30,6 +30,7 @@
 <hr class             = "line2">
 <br>
 <a href               = "SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
+<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
 <br><br>
 <hr class             = "line2">
 <div class="grid-container">
