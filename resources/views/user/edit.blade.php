@@ -4,7 +4,6 @@
         <link href="/css/index.css" rel="stylesheet">
         <title>Inventory Management New Entry</title>
         <link href    = "/css/main.css" rel="stylesheet">
-        <link href    = "/css/invCreate.css" rel="stylesheet">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -35,16 +34,16 @@
 <text> > </text>
 <a href               = "#create" style="font-family:calibri;font-size:18px;"> New Entry </a>
 <a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2">
 <div>
     <h2>Update booking details</h2><br>
 
-    <form action="/edit" method="POST">
+    <form action="/editlist" method="POST">
       @csrf
     <input type="hidden" name="id" value="{{$data->id}}">
-
+  <div class="box">
   
 
   <div class="form-group">
@@ -94,9 +93,9 @@
     <input type="date" name="checked_out" value="{{$data->checked_out}}" class="form-control" id="exampleInputCOdate" placeholder="">
   </div>
   <br><br>
-  
+</div>  
   <div class="btn1">
-  <button type="submit" class="btn btn-primary">Update</button>
+  <button type="submit" class=" btn-primary">Update</button>
 </div>
 </form>
     </div>

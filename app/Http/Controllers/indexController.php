@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use PDF;
 
 
 class indexController extends Controller
@@ -16,8 +17,12 @@ class indexController extends Controller
         
         $data = Customer::all();
         return view('user.index',['customers'=>$data]);
+    }
 
-        
+    public function exportBookPDF(){
+        $customers = Customer::all();
+        $bookpdf = PDF::loadview('user.index',compact('customers'));
+        return $bookpdf->download('bookList.pdf');
     }
 
     function delete($id)

@@ -35,7 +35,7 @@
 <text> > </text>
 <a href               = "#create" style="font-family:calibri;font-size:18px;"> New Entry </a>
 <a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+
 </a><br><br>
 <hr class             = "line2">
 
@@ -64,15 +64,17 @@
     <td>{{$item->room_ID}}</td>
     <td>{{$item->checked_in}}</td>
     <td>{{$item->checked_out}}</td>
-    <td><a href={{"delete/".$item['id']}}><i class="fa fa-trash"></i></a>
-        <a href={{"edit/".$item['id']}}><i class="fa fa-edit"></i></a>
+    <td><a href={{"deletelist/".$item['id']}}><i class="fa fa-trash"></i></a>
+        <a href={{"editlist/".$item['id']}}><i class="fa fa-edit"></i></a>
     </td>
   
 </tr>
 @endforeach
 </table>
-
+<div class="b_container">
 <a class="addbtn" href="/create">Add details</a>
+<a class="rep_btn" href="/bookPdf">Generate Report</a>
+</div>
 
 
 <hr class             = "line2">

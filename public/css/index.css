@@ -66,12 +66,132 @@ hr.line2{
 h2{
     text-align: center;
     padding-top: 200px;
+    color: #fff;
 }
-label{
-    padding-left: 10px;
-}
+
      
 .btn1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
+    min-height: 10vh;
  }
+
+.btn-primary{
+    width:150px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(255,0,68);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #f9e506;
+    transition: ease-out 0.3s;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.btn-primary:hover{background-color:  rgb(241, 155, 176)}
+
+.box{
+    width: 500px;
+    height: 450px;
+    margin: 60px auto 0;
+    background:rgb(128, 129, 129);
+    text-align: center;
+    padding: 35px;
+    border: 3px solid #fff;
+    border-radius: 70px 0;
+    font-size: 1rem;
     
+}
+   
+label{
+    width: 200px;
+    display: inline-block;
+    font-size: 20px;
+    
+}
+
+.form-control{
+   display: inline-block;
+}
+
+.addbtn{
+    padding: 5px 10px;
+    align-items: center;
+    width:120px;
+    height: 40px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(247, 33, 86);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #f9e506;
+    transition: ease-out 0.3s;
+    font-size: 1.25rem;
+    outline: none;
+    text-decoration: none;
+ }
+
+ .addbtn:hover{background-color:  rgb(241, 155, 176)}
+
+ .b_container{
+     text-align: center;
+     margin-top: 70px;
+ }
+
+.rep_btn{
+
+    padding: 5px 10px;
+    align-items: center;
+    width:120px;
+    height: 40px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(247, 33, 86);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #f9e506;
+    transition: ease-out 0.3s;
+    font-size: 1.25rem;
+    outline: none;
+    text-decoration: none;
+}
+
+.rep_btn:hover{background-color:  rgb(241, 155, 176)}
+
+ body{
+    font-family: 'Roboto', sans-serif;
+    background: url("../images/createimg.jpg") rgba(80, 79, 79, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-blend-mode: multiply;
+    
+ }
+
+ table {
+    margin: auto;
+    justify-content: center;
+    width: 80%;
+}
+table,th,td {
+    border: 2px solid #847979;
+    border-collapse: collapse;
+}
+th,td {
+    padding: 10px;
+}
+th {
+    text-align: center;
+    background-color: #847979;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+td {
+    text-align: center;
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+}
+
