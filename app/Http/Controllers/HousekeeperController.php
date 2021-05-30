@@ -15,6 +15,7 @@ class HousekeeperController extends Controller
      */
     public function index()
     {
+        //redirect to the index blade file with all the housekeepers' details
         $housekeepers = Housekeeper::latest()->paginate(5);
         return view('housekeepers.index', compact('housekeepers'))->with(request()->input('page'));
 
@@ -27,6 +28,7 @@ class HousekeeperController extends Controller
      */
     public function create()
     {
+        //redirect to the create blade in housekeepers view folder
         return view('housekeepers.create');
     }
 
@@ -38,7 +40,7 @@ class HousekeeperController extends Controller
      */
     public function store(Request $request)
     {
-        //validate the input
+        //validate the inputs in create blade file
         $request->validate([
             'first_Name'=>'required',
             'last_Name'=>'required',
@@ -54,7 +56,7 @@ class HousekeeperController extends Controller
         //create a new housekeeper
         Housekeeper::create($request->all());
 
-        //redirect the user and send succesfull message
+        //redirect the housekeepers' list with successful message
         return redirect()->route('housekeepers.index')->with('success','A new housekeeper details added successfully');
     }
 
@@ -66,6 +68,7 @@ class HousekeeperController extends Controller
      */
     public function show(Housekeeper $housekeeper)
     {
+        //redirect to the taskcreate blade file in housekeepers view folder
         return view('housekeepers.taskcreate', compact('housekeeper'));
     }
 
@@ -77,6 +80,7 @@ class HousekeeperController extends Controller
      */
     public function edit(Housekeeper $housekeeper)
     {
+         //redirect to the edit blade file in housekeepers view folder
         return view('housekeepers.edit', compact('housekeeper'));
     }
 
@@ -89,7 +93,7 @@ class HousekeeperController extends Controller
      */
     public function update(Request $request, Housekeeper $housekeeper)
     {
-        //validate the input
+        //validate the inputs in edit blade file
         $request->validate([
             'first_Name'=>'required',
             'last_Name'=>'required',
@@ -102,10 +106,10 @@ class HousekeeperController extends Controller
             'contact_Number'=>'required|digits:10'
         ]);
 
-        //create a new housekeeper
+        //update the housekeeper details
         $housekeeper->update($request->all());
 
-        //redirect the user and send succesfull message
+        //redirect to the index blade view and send succesful message
         return redirect()->route('housekeepers.index')->with('success','A housekeeper details updated successfully');
     }
 
@@ -117,19 +121,19 @@ class HousekeeperController extends Controller
      */
     public function destroy(Housekeeper $housekeeper)
     {
-        //delete the housekeeper
+        //delete a housekeeper
         $housekeeper->delete();
        
-        //redirect user and display success message
+        //redirect to the index blade view and display successful message
         return redirect()->route('housekeepers.index')->with('success','A housekeeper details deleted successfully');
 
     }
 
     public function exportHKDetailsPDF(){
-        // retreive all records from db
+        // retreive all housekeepers' records from database table
         $housekeepers = Housekeeper::all();
   
-        // share data to view
+        // share data to report view in housekeeper view folder
         $pdf = PDF::loadView('housekeepers.report', compact('housekeepers'));
   
         //download PDF file with download method
