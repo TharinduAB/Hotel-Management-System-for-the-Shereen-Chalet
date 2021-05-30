@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class fault extends Model
 {
     use HasFactory;
-    public $timestamps=false;
+    protected $fillable = ['item_No','item_Name','reason','description','supplier_Name'];
+    //public $timestamps=false;
 }

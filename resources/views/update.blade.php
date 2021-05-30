@@ -28,25 +28,26 @@
 </div>
 <hr class             = "line2">
 <br>
-<a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a>
+<a href               = "SCHome" style="font-family:calibri;font-size:18px;"> Home  </a>
 <text> > </text>
-<a href               = "#Inv" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
+<a href               = "InvHome" style="font-family:calibri;font-size:18px;"> Inventory Management </a>
 <text> > </text>
-<a href               = "#New" style="font-family:calibri;font-size:18px;"> New Entry </a>
-<a href               = "#useraccount" target="_blank">
-<button class         = "bttn1"><i class="fas fa-user"></i>  My Account</button>
+<a href               = "InvUpdate" style="font-family:calibri;font-size:18px;"> Update Entry </a>
+
+
 </a><br><br>
 <hr class             = "line2">
 <div id               = "ssDiv">
   
     <form action      = "/edit" method="POST">
       @csrf
+      <input type="hidden" name="id" value="{{ $data['id'] }}">
       <label for      = "id">Item ID : </label>
-      <input type     = "text" id="id" name="ItemID" value="{{$data['item_ID']}}" required><br>
+      <input type     = "text" id="id" name="ItemID" value="{{$data['item_ID']}}" ><br>
       <label for      = "iName">Item Name : </label>
-      <input type     = "text" id="iName" name="ItemName" value="{{$data['item_Name']}}" required><br>
+      <input type     = "text" id="iName" name="ItemName" value="{{$data['item_Name']}}" ><br>
       <label for      = "type">Item Type : </label>
-      <select id      = "type" name="ItemType" value="{{$data['item_Type']}}" required>
+      <select id      = "type" name="ItemType" value="{{$data['item_Type']}}" >
       <option value   = "electrical">Electrical</option>
       <option value   = "furniture">Furniture</option>
       <option value   = "food">Food</option>
@@ -54,11 +55,11 @@
       <option value   = "other">other</option>
       </select><br>
       <label for      = "supName">Supplier's Name : </label>
-      <input type     = "text" id="supName" name="SuppliersName" value="{{$data['supplier_Name']}}" required><br>
+      <input type     = "text" id="supName" name="SuppliersName" value="{{$data['supplier_Name']}}" ><br>
       <label for      = "uPrice">Unit Price : </label>
-      <input type     = "text" id="uPrice" name="UnitPrice" value="{{$data['unit_Price']}}" placeholder="Rs." required><br>
+      <input type     = "number" id="uPrice" name="UnitPrice" value="{{$data['unit_Price']}}" placeholder="Rs." ><br>
       <label for      = "qty">Quantity : </label>
-      <input type     = "text" id="qty" name="Quantity" value="{{$data['quantity']}}" required><br>
+      <input type     = "number" id="qty" name="Quantity" value="{{$data['quantity']}}" required><br>
       <label for      = "des">Description : </label>
       <input type     = "text" id="des" name="Description" value="{{$data['description']}}" placeholder="More Details.."><br>
       <input type     = "submit" value="Update">
