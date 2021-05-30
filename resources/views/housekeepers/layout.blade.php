@@ -10,7 +10,7 @@
 <body>
 <header>
 <div class            = "header">
-<a href               = "#home">
+<a href               = "{{ url('/') }}">
   <img src            = "{{asset("images/SSLogo.jpg")}}" class="logo" height="80px" width="160px">
 </a><br>
 	<font size        = "18" style="font-family:century gothic;" color="white" align="center"> Shereen Chalet <b> Kalpitiya </b></font>

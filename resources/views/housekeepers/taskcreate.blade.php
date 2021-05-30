@@ -2,7 +2,7 @@
 @extends('housekeepers.layout')
 
 @section('content1')
-<a href               = "#home" style="font-family:calibri;font-size:18px;"> Home  </a>
+<a href               = "{{ url('/') }}" style="font-family:calibri;font-size:18px;"> Home  </a>
 <text> > </text>
 <a href               = "{{ route('housekeepers.index') }}" style="font-family:calibri;font-size:18px;"> Maintenance Management </a>
 <text> > </text>

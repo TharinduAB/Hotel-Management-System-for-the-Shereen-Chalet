@@ -16,10 +16,12 @@ class TaskController extends Controller
      */
     public function index()
     {
+        //join query to get housekeeper details and task details
         $data = DB::table('housekeepers')
                 ->join('tasks','housekeepers.housekeeper_id','=','tasks.housekeeper_id')
                 ->select('housekeepers.housekeeper_id','housekeepers.first_Name','housekeepers.contact_Number','housekeepers.gender','tasks.task_id','tasks.status','tasks.room_ID','tasks.description')
                 ->get();
+        //redirect to the task list view with all the details get from join query
         return view('housekeepers.tasklist',compact('data'));
     }
 
@@ -41,7 +43,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //validation
+        //validation (validate form fields)
         $request->validate([
             'room_ID'=>'required',
             'status'=>'required',
@@ -52,7 +54,7 @@ class TaskController extends Controller
         //create a new task
         Task::create($request->all());
 
-        //redirect the user and send succesfull message
+        //redirect to the task list with a succesfull message (redirect to tasklist blade file in housekeepers view folder)
         return redirect()->route('tasks.index')->with('success','A new task added');
     }
 
@@ -75,6 +77,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
+        //redirect to the task edit blade file
         return view('housekeepers.taskedit', compact('task'));
     }
 
@@ -87,16 +90,17 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
+        //Validate the task update form fields
         $request->validate([
             'room_ID'=>'required',
             'status'=>'required',
             'description'=>'required',
         ]);
 
-        //create a new housekeeper
+        //update task details with update method
         $task->update($request->all());
 
-        //redirect the user and send succesfull message
+        //redirect to the task list and display successful message
         return redirect()->route('tasks.index')->with('success','A task details updated successfully');
     }
 
@@ -108,9 +112,10 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        //delete specific task
         $task->delete();
        
-        //redirect user and display success message
+        //redirect to the task list with a successful message
         return redirect()->route('tasks.index')->with('success','A task details deleted successfully');
     }
 }
