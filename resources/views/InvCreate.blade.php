@@ -5,6 +5,22 @@
         <link href    = "/css/main.css" rel="stylesheet">
         <link href    = "/css/invCreate.css" rel="stylesheet">
         <script src   = "https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
+        <style>
+          input[type=submit]{
+            width                       : 240px;
+            vertical-align              : middle;
+            align-content               : center;
+            background-color            : #018383;
+            color                       : white;
+            padding                     : 12px;
+            margin                      : 8px 200px;
+            border                      : none;
+            border-radius               : 10px;
+            cursor                      : pointer;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+          }
+        </style>
     </head>
     <body>
     <header>
